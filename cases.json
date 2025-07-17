@@ -1,0 +1,72 @@
+[
+  {
+    "keywords": ["threat", "intimidation", "message", "abuse", "dm", "instagram"],
+    "laws": ["IPC Section 506 (Criminal Intimidation)", "IT Act Section 66A"],
+    "explanation": "Sending abusive or threatening messages is a criminal offence. You can report it on the cybercrime portal.",
+    "risk": "🔴 High",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["blackmail", "extortion", "money demand", "force", "coercion"],
+    "laws": ["IPC Section 384 (Punishment for extortion)", "IPC Section 503 (Criminal intimidation)"],
+    "explanation": "Blackmailing or threatening to reveal personal information to force someone is a criminal offence.",
+    "risk": "🔴 High",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["fake profile", "impersonation", "identity theft", "account"],
+    "laws": ["IT Act Section 66C", "IPC Section 419"],
+    "explanation": "Creating a fake social media profile or impersonating someone online is illegal and punishable.",
+    "risk": "🟠 Medium",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["cyber bullying", "troll", "harass", "abuse", "comments"],
+    "laws": ["IT Act Section 66A", "IPC Section 509"],
+    "explanation": "Online bullying, abusive comments, and trolling are punishable under IT and IPC laws.",
+    "risk": "🟠 Medium",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["cheating", "fraud", "scam", "money", "transaction"],
+    "laws": ["IPC Section 420 (Cheating)", "IT Act Section 66D"],
+    "explanation": "Online cheating and scams involving financial transactions are criminal offences.",
+    "risk": "🔴 High",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["privacy", "leak", "photos", "videos", "unauthorized", "content"],
+    "laws": ["IT Act Section 66E", "IPC Section 354C (Voyeurism)"],
+    "explanation": "Leaking or sharing someone’s private content without consent is a serious offence.",
+    "risk": "🔴 High",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["hacking", "unauthorized access", "data breach", "account hacked"],
+    "laws": ["IT Act Section 66", "66B", "IPC Section 379"],
+    "explanation": "Accessing someone’s account or system without permission is illegal.",
+    "risk": "🔴 High",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["online threat", "cyber threat", "internet threat", "online violence"],
+    "laws": ["IPC Section 506", "IT Act Section 66A"],
+    "explanation": "Online threats through messages or social platforms are punishable under law.",
+    "risk": "🔴 High",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["sextortion", "sexual content", "blackmail", "nudes", "private pictures"],
+    "laws": ["IPC Section 354A", "354C", "IT Act Section 67A"],
+    "explanation": "Threatening someone to share sexual content is a serious cybercrime and a punishable offence.",
+    "risk": "🔴 High",
+    "link": "https://cybercrime.gov.in/"
+  },
+  {
+    "keywords": ["defamation", "reputation", "false post", "character", "allegations"],
+    "laws": ["IPC Section 499", "500"],
+    "explanation": "Posting false allegations online that affect someone's reputation is punishable.",
+    "risk": "🟡 Low",
+    "link": "https://cybercrime.gov.in/"
+  }
+]
