@@ -1,6 +1,6 @@
 # ⚖️ SealLaw
 
-**LawLens** is a beginner-friendly legal advisory web app that provides prewritten insights on common cybercrime issues. It's designed as a portfolio project to demonstrate front-end and logical implementation skills using HTML, CSS, JavaScript, and JSON — without relying on paid APIs or ChatGPT integration.
+**SealLaw** is a beginner-friendly legal advisory web app that provides prewritten insights on common cybercrime issues. It's designed as a portfolio project to demonstrate front-end and logical implementation skills using HTML, CSS, JavaScript, and JSON — without relying on paid APIs or ChatGPT integration.
 
 > 📌 Disclaimer: This tool is for **educational and demonstrational purposes only**. The responses are **pre-written and not legally binding**. Always consult a licensed professional for actual legal advice.
 
