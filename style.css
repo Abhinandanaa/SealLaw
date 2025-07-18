@@ -19,6 +19,16 @@ h1 {
   margin-bottom: 20px;
 }
 
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
 textarea {
   width: 100%;
   height: 120px;
@@ -40,14 +50,12 @@ button {
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 button:hover {
   background-color: #218838;
 }
-
-
-
 
 #result {
   margin-top: 20px;
@@ -56,4 +64,20 @@ button:hover {
   border-radius: 8px;
   white-space: pre-line;
   font-size: 16px;
+}
+
+.contact {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+}
+
+.contact a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
 }
