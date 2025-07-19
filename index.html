@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SealLaw - Legal Insights</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SealLaw is your personal legal insight tool for instant help on legal matters like cybercrime, family disputes, property conflicts, and more.">
+  <title>SealLaw | Instant Legal Help</title>
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="container">
-    <h1>SealLaw</h1>
-    <p style="text-align:center; color: #666; margin-top: -10px;">Your Personal Legal Insight Tool 🧑‍⚖️</p>
+<body class="bg-gray-50 font-[Poppins] text-gray-800 flex flex-col min-h-screen">
+  <!-- Header -->
+  <header class="text-center py-8 bg-white shadow-md">
+    <h1 class="text-4xl font-bold text-green-700">SealLaw</h1>
+    <p class="text-sm text-gray-600 mt-1">Your Personal Legal Insight Tool 🧑‍⚖️</p>
+  </header>
 
-    <!-- Dropdown for legal categories -->
-    <select id="categorySelect">
-      <option value="">Select Legal Category (Optional)</option>
-      <option value="cyber">Cyber Crime</option>
-      <option value="property">Property Dispute</option>
-      <option value="family">Family Law</option>
-      <option value="employment">Employment</option>
-      <option value="others">Others</option>
-    </select>
+  <!-- Main content -->
+  <main class="flex-grow flex items-center justify-center px-4 py-6">
+    <div class="bg-white w-full max-w-2xl p-6 rounded-2xl shadow-xl">
+      <!-- Website Overview -->
+      <section class="mb-6">
+        <h2 class="text-2xl font-semibold mb-2">Overview</h2>
+        <p class="text-gray-700 leading-relaxed">
+          SealLaw provides instant legal insights using a wide database of known legal cases across domains like Cybercrime, Family Law, Property Disputes, and more. This tool is designed to educate and guide young users toward the right legal direction without replacing professional legal counsel.
+        </p>
+      </section>
 
-    <textarea id="issueInput" placeholder="Describe your issue... Eg: I'm being harassed online"></textarea>
-    <button id="analyzeBtn">Get Legal Insights</button>
-    <div id="output"></div>
+      <!-- Form -->
+      <div class="space-y-4">
+        <select class="w-full p-3 border border-gray-300 rounded-xl">
+          <option>Select Legal Category (Optional)</option>
+          <option>Cybercrime</option>
+          <option>Family Law</option>
+          <option>Property</option>
+          <option>Women's Rights</option>
+        </select>
+        <textarea class="w-full h-32 p-3 border border-gray-300 rounded-xl resize-none" placeholder="Describe your issue... Eg: I'm being harassed online"></textarea>
+      </div>
 
-    <div class="disclaimer">
-      <p><strong>Disclaimer:</strong> This tool provides prewritten legal advice based on known cases and does not constitute professional legal counsel. Always consult a qualified advocate for real-life legal action.</p>
+      <!-- Disclaimer -->
+      <p class="text-xs text-gray-500 mt-4">
+        <strong>Disclaimer:</strong> This tool provides prewritten legal advice based on known cases and does not constitute professional legal counsel. Always consult a qualified advocate for real-life legal action.
+      </p>
     </div>
+  </main>
 
-    <div style="text-align: center;">
-      <img src="old.png" alt="SealLaw Logo" style="max-height: 100px; margin-bottom: 10px;">
-    </div>
+  <!-- Sticky Footer Button -->
+  <footer class="sticky bottom-0 bg-white border-t border-gray-200 shadow-inner py-4 flex justify-center">
+    <button class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all">
+      Get Legal Insights
+    </button>
+  </footer>
 
-    <!-- Contact Section -->
-    <div class="contact" style="text-align: center; margin-top: 20px; font-size: 14px; color: #444;">
-      <p><strong>Contact:</strong></p>
-      <p>Email: <a href="mailto:bollempallyabhinandana@gmail.com">bollempallyabhinandana@gmail.com</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/abhinandana.b" target="_blank">@abhinandana.b</a></p>
-    </div>
+  <!-- Contact Info -->
+  <div class="text-center py-4 text-sm text-gray-500">
+    <div class="font-semibold">Contact:</div>
+    <p>Email: seallawabhinandana@gmail.com</p>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
