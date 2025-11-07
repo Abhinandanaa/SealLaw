@@ -147,21 +147,33 @@ Answer:`;
   }
 
   // call serverless AI endpoint
-  async function callAI(prompt) {
-    try {
-      const r = await fetch('/api/ai', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({prompt})
-      });
-      const j = await r.json();
-      if (j.error) throw new Error((j.error||'API error') + ' ' + (j.detail||''));
-      return j.text || j.generated_text || JSON.stringify(j);
-    } catch (e) {
-      console.error('AI call failed', e);
-      return null;
+ // replace callAI with this in script.js
+async function callAI(prompt) {
+  try {
+    const resp = await fetch('/api/ai', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ prompt })
+    });
+    // network-level error
+    if (!resp.ok) {
+      const txt = await resp.text();
+      console.error('api/ai failed', resp.status, txt);
+      // show a readable message to user
+      return { ok:false, status:resp.status, detail: txt };
     }
+    const j = await resp.json();
+    if (j.error) {
+      console.error('api/ai returned error', j);
+      return { ok:false, status:500, detail: j.detail || j.error };
+    }
+    return { ok:true, text: j.text || j.generated_text || JSON.stringify(j) };
+  } catch (err) {
+    console.error('callAI exception', err);
+    return { ok:false, status:0, detail: String(err) };
   }
+}
+
 
   // main ask function
   async function doAsk(q) {
