@@ -1,159 +1,145 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  padding: 30px;
+/* =====================================================
+   SealLaw — Complete style.css (dark theme, high-contrast)
+   Replace your existing style.css with this file
+   ===================================================== */
+
+/* ---------- Theme variables ---------- */
+:root{
+  --bg: #0f1724;
+  --bg-2: #0b1220;
+  --card: rgba(255,255,255,0.02);
+  --card-2: rgba(255,255,255,0.015);
+  --muted: #94a3b8;
+  --text: #e6eef8;
+  --accent-a: #6ee7b7;
+  --accent-b: #60a5fa;
+  --glass: rgba(255,255,255,0.03);
+  --glass-strong: rgba(255,255,255,0.045);
+  --shadow-strong: 0 18px 40px rgba(2,6,23,0.6);
+  --radius: 12px;
+  --focus: 3px solid rgba(110,231,183,0.14);
+  --max-width: 1100px;
+  --ui-ease: 180ms;
 }
 
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* ---------- Base / Reset ---------- */
+* { box-sizing: border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+html,body { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:
+  radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent),
+  radial-gradient(1000px 500px at 90% 90%, rgba(99,102,241,0.04), transparent),
+  var(--bg); color: var(--text);
+  -webkit-tap-highlight-color: transparent;
 }
 
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+/* Remove default focus outline but keep accessible focus */
+:focus { outline: none; box-shadow: none; }
+a,button,input,textarea { font-family: inherit; }
+
+/* ---------- Layout container ---------- */
+.app { max-width: var(--max-width); margin: 36px auto; padding: 28px; }
+
+/* ---------- Header ---------- */
+header { display:flex; align-items:center; gap:16px; margin-bottom: 10px; }
+#siteLogo { width:64px; height:64px; border-radius:14px; object-fit:cover;
+  background: rgba(255,255,255,0.02); padding:8px; box-shadow: var(--shadow-strong);
+  border: 1px solid rgba(255,255,255,0.02); opacity:1; transition: transform var(--ui-ease);
 }
+#siteLogo:hover { transform: translateY(-3px); }
 
-select {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+/* Title */
+h1 { margin:0; font-size:22px; font-weight:700; color:var(--text) }
+p.lead { margin:4px 0 0; color:var(--muted); font-size:13px }
+
+/* ---------- Search card ---------- */
+.searchCard { background: linear-gradient(180deg, var(--card), var(--card-2)); padding:20px; border-radius:var(--radius); margin-top:12px; box-shadow: var(--shadow-strong); border: 1px solid rgba(255,255,255,0.01); }
+.searchRow { display:flex; gap:12px; align-items:center; }
+input.search, input#q { flex:1; padding:14px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background: transparent; color:var(--text); font-size:15px; }
+input.search::placeholder, input#q::placeholder { color: rgba(230,238,248,0.45); }
+button.primary, .ask-button { background: linear-gradient(90deg, var(--accent-a), var(--accent-b)); border:none; padding:12px 16px; border-radius:10px; font-weight:700; cursor:pointer; color:#022; box-shadow: 0 8px 18px rgba(96,165,250,0.06); transition: transform var(--ui-ease), box-shadow var(--ui-ease); }
+button.primary:active, .ask-button:active { transform: translateY(1px); }
+button.primary:focus, .ask-button:focus, input#q:focus { box-shadow: var(--focus); outline: none; }
+
+/* chips */
+.chips { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+.chip { background: rgba(255,255,255,0.02); padding:8px 10px; border-radius:999px; font-size:13px; color:var(--muted); cursor:pointer; transition: transform .12s ease, background .12s ease; }
+.chip:hover { transform: translateY(-4px); background: rgba(255,255,255,0.03); color: var(--text); }
+
+/* ---------- Results area ---------- */
+.results { display:grid; grid-template-columns: 2fr 1fr; gap:18px; margin-top:20px; align-items:start; }
+
+/* generic card */
+.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; position:relative; overflow:visible; border: 1px solid rgba(255,255,255,0.01); }
+.sectionTag { display:inline-block; background: rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px; font-weight:600; margin-bottom:10px; color:var(--text) }
+
+/* suggestion area */
+#suggestionTitle { margin: 8px 0; font-size:28px; font-weight:700; color:var(--text) }
+#suggestionText { color: var(--muted); font-size:15px; line-height:1.6; margin:8px 0 0 0; background:transparent; border: none; padding:0; }
+
+/* cases list */
+.casesList { display:flex; flex-direction:column; gap:12px; margin-top:8px; }
+.case { padding:12px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.12)); display:flex; justify-content:space-between; align-items:center; cursor:default; position:relative; transition: transform .15s ease, box-shadow .15s ease; border: 1px solid rgba(255,255,255,0.01); }
+.case:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.6); }
+.case .meta { max-width:72%; }
+.case h4 { margin:0; font-size:15px; color: #ffffff; font-weight:700; text-shadow: 0 1px 0 rgba(0,0,0,0.35); }
+.case p { margin:4px 0 0; color: #c5d4e1; font-size:13px; line-height:1.45; opacity:0.98; }
+
+/* case date / meta */
+.case .meta-date, .case .date { color: #c1d5e6; opacity:0.95; font-size:13px; }
+
+/* Contact Adv button inside case (selector covers possible button variants) */
+.case .contact-btn, .case .contact-adv, .case button.contact, .case .case-cta {
+  background: rgba(255,255,255,0.04); color: #eaf6ff; border: 1px solid rgba(255,255,255,0.04); padding:8px 12px; border-radius:10px; box-shadow: 0 6px 18px rgba(2,6,23,0.55); font-weight:700; cursor:pointer;
 }
+.case .contact-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.06); }
 
-textarea {
-  width: 100%;
-  height: 120px;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-bottom: 15px;
-  resize: vertical;
-}
-
-#submit-button {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  width: 90%;
-  max-width: 500px;
-  padding: 1rem;
-  background-color: #28a745;
-  color: white;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease;
-}
-
-#submit-button:hover {
-  background-color: #218838;
-}
-
-#result {
-  margin-top: 20px;
-  background-color: #eef;
-  padding: 15px;
-  border-radius: 8px;
-  white-space: pre-line;
-  font-size: 16px;
-}
-
-.contact {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 14px;
-  color: #444;
-}
-.site-overview {
-  padding: 2rem 1rem;
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-}
-
-.site-overview h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.site-overview p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-
-.contact a {
-  color: #0077cc;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-/* ---------------- SealLaw AI UI additions ---------------- */
-
-/* typing / fade animations */
-.ai-typing { display:flex; gap:8px; align-items:center; font-size:14px; color:var(--muted); margin: 12px 0; }
-.typing-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.12); opacity:0.6; animation: blink 1s infinite; }
-.typing-dot:nth-child(2){ animation-delay:.15s } .typing-dot:nth-child(3){ animation-delay:.3s }
-@keyframes blink { 0%{transform:translateY(0); opacity:0.6} 50%{transform:translateY(-6px); opacity:1} 100%{transform:translateY(0); opacity:0.6} }
-
-.response-card { opacity:0; transform: translateY(8px); transition:opacity .36s ease, transform .36s ease; will-change: opacity, transform; margin-bottom:12px; border-radius:8px; padding:14px; background: rgba(255,255,255,0.02); }
-.response-card.visible { opacity:1; transform:none; }
-
-.ai-spinner { width:18px; height:18px; border-radius:50%; border:2px solid rgba(255,255,255,0.06); border-top-color:var(--accent); animation:spin 1s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg) } }
-
-.ai-analysing { font-size:13px; color:var(--muted); margin-left:10px; }
-
-/* chips / tags */
-.generated-tags .chip { display:inline-block; padding:6px 10px; margin:6px 6px 0 0; border-radius:16px; background:rgba(255,255,255,0.02); font-size:13px; }
-
-/* advocates card */
-.adv-card { display:flex; align-items:center; gap:12px; padding:10px; border-radius:10px; background: rgba(255,255,255,0.01); margin-bottom:10px; }
-.adv-card .adv-icon { width:36px; height:36px; display:grid; place-items:center; border-radius:8px; background: rgba(255,255,255,0.03); font-weight:700; }
+/* ---------- Right panel (advocates) ---------- */
+#rightPanel { position: relative; }
+#advList { display:flex; flex-direction:column; gap:12px; margin-top:8px; }
+.adv-card { display:flex; align-items:center; gap:12px; padding:10px; border-radius:10px; background: rgba(255,255,255,0.01); margin-bottom:0; border: 1px solid rgba(255,255,255,0.01); }
+.adv-card .adv-icon { width:46px; height:46px; display:grid; place-items:center; border-radius:10px; background: rgba(255,255,255,0.03); font-weight:700; color:var(--text); }
+.adv-card .adv-info { font-size:14px; color:var(--text); }
 .adv-card .adv-info .adv-name { font-weight:700; }
+.adv-card .adv-info p { margin:2px 0; color:var(--muted); font-size:13px; }
 .adv-card .adv-actions { margin-left:auto; display:flex; flex-direction:column; gap:8px; }
-.adv-link { padding:6px 10px; border-radius:8px; background: rgba(255,255,255,0.02); text-decoration:none; }
+.adv-link { padding:6px 10px; border-radius:8px; background: rgba(255,255,255,0.02); text-decoration:none; color:#cfeeff; border:1px solid rgba(255,255,255,0.02); box-shadow: 0 8px 20px rgba(2,6,23,0.35); }
 
-/* similar cases (small) */
-.similar-cases { margin-top:12px; }
-.case-item.small { padding:8px 10px; border-radius:8px; background: rgba(255,255,255,0.01); margin-bottom:8px; }
+/* Primary / small action buttons */
+.btnSmall, #openChat, #payBtn { padding:10px 12px; border-radius:10px; border:none; cursor:pointer; font-weight:700; background: linear-gradient(90deg, var(--accent-a), var(--accent-b)); color:#022; box-shadow: 0 10px 28px rgba(36,116,116,0.08); }
+.btnSmall.secondary { background: rgba(255,255,255,0.03); color:var(--text); border:1px solid rgba(255,255,255,0.02); box-shadow:none; }
 
-/* --------- IMPORTANT: Disable annoying floating preview behavior --------- */
-/* This block prevents browser tooltips and custom floating elements from being visible.
-   It also blocks any element commonly used as a floating preview with these classes/ids.
-   If the floating element uses a different class, this still prevents the default tooltip. */
+/* ---------- Chat FAB and modal ---------- */
+.chatFab { position:fixed; right:28px; bottom:28px; background:linear-gradient(90deg,#7c3aed,#06b6d4); width:64px; height:64px; border-radius:20px; display:flex; align-items:center; justify-content:center; font-weight:800; cursor:pointer; box-shadow: 0 14px 30px rgba(12,12,30,0.6); z-index:2200; }
+.modal { position:fixed; right:28px; bottom:104px; width:360px; background: linear-gradient(180deg,#071029,#07131b); border-radius:12px; padding:12px; box-shadow: 0 20px 60px rgba(2,6,23,0.6); transform-origin:bottom right; z-index:2150; }
+.msgs { height:320px; overflow:auto; padding:8px; display:flex; flex-direction:column; gap:8px; }
+.msg { max-width:80%; padding:10px; border-radius:10px; }
+.msg.user { align-self:flex-end; background: linear-gradient(90deg,#0ea5a4,#60a5fa); color:#022; }
+.msg.bot { align-self:flex-start; background: rgba(255,255,255,0.03); color:var(--text); }
 
-.case-item, .case-item * { pointer-events: auto; } /* keep items interactive normally */
-[title] { /* remove native browser tooltips visually */
-  position: relative;
+/* ---------- Floating tip (pinned hidden) ---------- */
+.floating { position: fixed; pointer-events:none; z-index:2400; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); padding:10px; border-radius:10px; min-width:220px; box-shadow: 0 18px 40px rgba(2,6,23,0.6); font-size:13px; color:var(--muted); left:20px; bottom:20px; display:none; }
+
+/* ---------- Accessibility helpers ---------- */
+button, .chip, .adv-link, .case .contact-btn { transition: all var(--ui-ease) ease; }
+[role="button"]:focus, button:focus, .adv-link:focus { box-shadow: var(--focus); outline:none; }
+
+/* Increase tap target for small clickable elements */
+.case .contact-btn, .adv-card .adv-link, .btnSmall { min-height:38px; padding-left:12px; padding-right:12px; }
+
+/* ---------- Prevent common floating preview classes (safety) ---------- */
+/* Hide known preview helper elements if present (non-destructive) */
+.floating-preview, .drag-preview, .hover-preview, .follow-cursor, .preview-tooltip { display:none !important; pointer-events:none !important; }
+
+/* Prevent browser drag-image clones (stops many follow-cursor previews) */
+* { -webkit-user-drag: none; user-drag: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .results { grid-template-columns: 1fr; }
+  #rightPanel { order: 2; }
+  .chatFab { right:14px; bottom:18px; }
+  .modal { right:14px; bottom:84px; width: 92%; left: 4%; }
 }
-/* Hide any element that might be used as a hover-preview with common names */
-.floating-preview, .drag-preview, .hover-preview, .follow-cursor, .preview-tooltip { display: none !important; pointer-events: none !important; }
 
-/* Prevent user-select dragging ghost preview on cards */
-.case-item { -webkit-user-drag: none; user-drag: none; -webkit-user-select: text; user-select: text; }
-
-/* Ensure the main responses area doesn't create a floating draggable clone */
-.card, .response-card { -webkit-user-drag: none; user-drag: none; }
-
-/* small mobile/responsive adjustments */
-@media (max-width:900px) {
-  .adv-card .adv-actions { flex-direction:row; gap:8px; }
-}
+/* ---------- Minor visual niceties ---------- */
+.case small, .case .case-sub { color: var(--muted); font-size:13px; }
+.card, .case, .adv-card { will-change: transform, opacity; }
