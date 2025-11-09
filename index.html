@@ -9,159 +9,159 @@
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 
   <style>
+    /* ---------- Theme + base ---------- */
     :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#6ee7b7; --glass:rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.02);
+      --bg:#0f1724; --muted:#94a3b8; --accent-a:#6ee7b7; --accent-b:#60a5fa;
+      --card: rgba(255,255,255,0.02);
+      --shadow: 0 18px 40px rgba(2,6,23,0.6);
+      --radius: 12px;
+      --max-width:1100px;
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:
       radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent),
       radial-gradient(1000px 500px at 90% 90%, rgba(99,102,241,0.04), transparent),
       var(--bg); color:#e6eef8}
-    .app{max-width:1100px;margin:36px auto;padding:28px}
+    .app{max-width:var(--max-width);margin:36px auto;padding:28px}
+
+    /* header */
     header{display:flex;align-items:center;gap:16px;margin-bottom:6px}
     #siteLogo { width:64px;height:64px;border-radius:14px; object-fit:cover; box-shadow:0 10px 30px rgba(2,6,23,0.6); background:rgba(255,255,255,0.02); padding:8px; border:1px solid rgba(255,255,255,0.02); }
     h1{margin:0;font-size:22px}
     p.lead{margin:4px 0 0;color:var(--muted);font-size:13px}
 
-    .searchCard{background:linear-gradient(180deg,var(--glass-2), rgba(255,255,255,0.01));padding:20px;border-radius:14px;margin-top:12px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    /* search */
+    .searchCard{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.01));padding:20px;border-radius:14px;margin-top:12px;box-shadow:var(--shadow)}
     .searchRow{display:flex;gap:12px}
-    input.search, input#q {flex:1;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px}
-    button.primary, .ask-button {background:linear-gradient(90deg,var(--accent),#60a5fa);border:none;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer;box-shadow:0 8px 18px rgba(96,165,250,0.08)}
+    input#q {flex:1;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px}
+    button.primary {background: linear-gradient(90deg,var(--accent-a),var(--accent-b)); border:none;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer;}
     .chips{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-    .chip{background:var(--glass);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted);cursor:pointer;transition:transform .12s}
-    .chip:hover{transform:translateY(-4px)}
+    .chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted);cursor:pointer}
 
-    .results{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:20px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;position:relative;overflow:visible}
+    /* results layout */
+    .results { display:grid; grid-template-columns: 1fr 360px; gap:18px; margin-top:20px; align-items:start; }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;position:relative;overflow:visible; border:1px solid rgba(255,255,255,0.01)}
     .sectionTag{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-weight:600;margin-bottom:10px}
+
+    /* main card */
+    #suggestionTitle{margin:8px 0 0 0;font-size:28px}
+    #suggestionText{color:var(--muted);font-size:15px;line-height:1.6;margin:8px 0 0 0;white-space:pre-wrap}
+
+    /* cases */
     .casesList{display:flex;flex-direction:column;gap:12px;margin-top:8px}
-    .case{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.14));display:flex;justify-content:space-between;align-items:center;cursor:default;position:relative;transition:transform .15s, box-shadow .15s}
-    .case:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
-    .case .meta{max-width:75%}
-    .case h4{margin:0;font-size:15px;color:#ffffff;font-weight:700;text-shadow:0 1px 0 rgba(0,0,0,0.35)}
-    .case p{margin:4px 0 0;color:#c5d4e1;font-size:13px;line-height:1.45;opacity:0.98}
-    .case .date{color:#c1d5e6;font-size:13px}
+    .case{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.12));display:flex;align-items:center;gap:12px;transition:transform .15s,box-shadow .15s}
+    .case:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .case .meta{flex:1;min-width:0}
+    .case h4{margin:0;font-size:15px;color:#fff;font-weight:700}
+    .case p{margin:6px 0 0;color:#c5d4e1;font-size:13px;line-height:1.45}
+    .case .date{color:#c1d5e6;font-size:13px;white-space:nowrap}
+    .contact-btn{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#022;border:none;padding:8px 12px;border-radius:10px;font-weight:800;cursor:pointer;box-shadow:0 10px 28px rgba(36,116,116,0.08)}
 
-    .advocate{display:flex;gap:12px;align-items:center}
-    .avatar{width:46px;height:46px;border-radius:10px;background:linear-gradient(180deg,#1f2937,#111827);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .advInfo{font-size:14px}
-    .advInfo p{margin:2px 0;color:var(--muted);font-size:13px}
-    .btnSmall{padding:8px 10px;border-radius:8px;border:none;font-weight:600;cursor:pointer;background:rgba(255,255,255,0.02)}
+    /* right column */
+    aside#rightPanel{position:relative}
+    #advList{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+    .adv-card{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.01)}
+    .adv-icon{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,0.03);font-weight:700}
+    .adv-info{font-size:14px}
+    .adv-link{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:#cfeeff;text-decoration:none;border:1px solid rgba(255,255,255,0.02)}
 
+    /* actions below advocates */
+    .btnSmall{padding:10px 12px;border-radius:10px;border:none;font-weight:700;background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#022;cursor:pointer}
+
+    /* chat FAB/modal */
     .chatFab{position:fixed;right:28px;bottom:28px;background:linear-gradient(90deg,#7c3aed,#06b6d4);width:64px;height:64px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;box-shadow:0 14px 30px rgba(12,12,30,0.6);z-index:2200}
-
-    /* Chat modal */
     .modal{position:fixed;right:28px;bottom:104px;width:360px;background:linear-gradient(180deg,#071029,#07131b);border-radius:12px;padding:12px;box-shadow:0 20px 60px rgba(2,6,23,0.6);transform-origin:bottom right;z-index:2150}
     .msgs{height:320px;overflow:auto;padding:8px;display:flex;flex-direction:column;gap:8px}
-    .msg{max-width:80%;padding:10px;border-radius:10px}
-    .msg.user{align-self:flex-end;background:linear-gradient(90deg,#0ea5a4,#60a5fa);color:#022}
-    .msg.bot{align-self:flex-start;background:rgba(255,255,255,0.03)}
 
-    footer.note{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    /* floating tip hidden */
+    .floating{display:none}
 
-    /* Floating tooltip: kept but initially hidden; no follow-cursor behavior */
-    .floating{
-      position:fixed;pointer-events:none;z-index:2400;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      padding:10px;border-radius:10px;min-width:220px;box-shadow:0 18px 40px rgba(2,6,23,0.6);transform:translate(-12px,-12px);opacity:0;transition:opacity .1s;
-      font-size:13px;color:var(--muted);
-      left:20px; bottom:20px; /* pinned so it does NOT follow cursor */
-      display:none;
-    }
-
-    /* Contact button inside case (visible) */
-    .contact-btn { background: rgba(255,255,255,0.04); color: #eaf6ff; border: 1px solid rgba(255,255,255,0.04); padding:8px 12px; border-radius:10px; box-shadow: 0 6px 18px rgba(2,6,23,0.55); font-weight:700; cursor:pointer; }
-
-    /* small adjustments */
-    @media (max-width:880px){.results{grid-template-columns:1fr}}
+    /* responsive */
+    @media(max-width:980px){ .results{grid-template-columns:1fr} aside#rightPanel{order:2;margin-top:12px} }
   </style>
 </head>
 
 <body>
   <div class="app">
+    <!-- header -->
     <header>
-      <!-- logo image (old.png) -->
-      <img src="old.png" id="siteLogo" alt="SealLaw logo">
+      <img src="old.png" id="siteLogo" alt="SealLaw logo" />
       <div>
         <h1>SealLaw — AI Legal Assistant</h1>
         <p class="lead">Ask a question, see likely law sections, related cases and contact advocates.</p>
       </div>
     </header>
 
-    <!-- SEARCH -->
+    <!-- search -->
     <div class="searchCard card" id="searchCard">
       <div class="searchRow">
-        <!-- keep id="q" because script.js expects it -->
-        <input id="q" class="search" placeholder="Describe your issue (e.g. online abuse, cyberstalking, property dispute)..." />
+        <input id="q" placeholder="Describe your issue (e.g. online abuse, cyberstalking, property dispute)..." />
         <button id="askBtn" class="primary">Ask AI</button>
       </div>
       <div class="chips" id="chips">
-        <!-- chips may be dynamically filled by script.js -->
+        <button class="chip">cyber abuse</button>
+        <button class="chip">defamation</button>
+        <button class="chip">data breach</button>
+        <button class="chip">stalking</button>
+        <button class="chip">online fraud</button>
       </div>
     </div>
 
-    <!-- RESULTS -->
+    <!-- results (left + right) -->
     <div class="results">
-      <div class="card" id="mainResult">
-        <div id="sectionInfo">
-          <span class="sectionTag" id="lawSection">Try asking a question to get started</span>
-        </div>
 
-        <h2 id="suggestionTitle" style="margin-top:8px">Suggested next steps</h2>
-        <pre id="suggestionText" style="color:var(--muted);white-space:pre-wrap;font-family:inherit;margin:0">
-The assistant will point to likely legal sections and show recent cases. This is a demo: consult a lawyer for actual legal advice.
-        </pre>
+      <!-- left / main -->
+      <div class="card" id="mainResult">
+        <div id="sectionInfo"><span class="sectionTag" id="lawSection">Try asking a question to get started</span></div>
+
+        <h2 id="suggestionTitle">Suggested next steps</h2>
+        <pre id="suggestionText">The assistant will point to likely legal sections and show recent cases. This is a demo: consult a lawyer for actual legal advice.</pre>
 
         <div style="margin-top:14px">
           <h3 style="margin:0 0 10px 0">Recent / Relevant Cases</h3>
           <div class="casesList" id="casesList">
 
-            <!-- Case 1 -->
+            <!-- case 1 -->
             <div class="case">
               <div class="meta">
                 <h4>State vs. R. Kumar — Cyber Harassment</h4>
-                <p>Abusive messages and persistent threats via social media and messaging platforms. —
-                   <strong>IT Act — Cyber Harassment provisions (example)</strong>
-                </p>
+                <p>Abusive messages and persistent threats via social media and messaging platforms. — <strong>IT Act — Cyber Harassment provisions</strong></p>
               </div>
               <div class="date">2025-03-12</div>
-              <button class="contact-btn">Contact Adv.</button>
+              <button class="contact-btn" aria-label="Contact advocate for State vs R Kumar">Contact Adv.</button>
             </div>
 
-            <!-- Case 2 -->
+            <!-- case 2 -->
             <div class="case">
               <div class="meta">
                 <h4>A vs B — Social Media Defamation</h4>
-                <p>False posts that damaged reputation; criminal & civil remedies pursued. —
-                   <strong>Section 499/500 IPC</strong>
-                </p>
+                <p>False posts that damaged reputation; criminal & civil remedies pursued. — <strong>Section 499/500 IPC</strong></p>
               </div>
               <div class="date">2025-04-22</div>
-              <button class="contact-btn">Contact Adv.</button>
+              <button class="contact-btn" aria-label="Contact advocate for A vs B">Contact Adv.</button>
             </div>
 
-            <!-- Case 3 -->
+            <!-- case 3 -->
             <div class="case">
               <div class="meta">
                 <h4>XYZ Corp vs User — Data Breach Claim</h4>
-                <p>Unauthorized disclosure of personal data by an employee leading to claim. —
-                   <strong>IT Act — Data protection clauses (example)</strong>
-                </p>
+                <p>Unauthorized disclosure of personal data by an employee leading to claim. — <strong>IT Act — Data protection clauses</strong></p>
               </div>
               <div class="date">2024-11-09</div>
-              <button class="contact-btn">Contact Adv.</button>
+              <button class="contact-btn" aria-label="Contact advocate for XYZ Corp vs User">Contact Adv.</button>
             </div>
 
           </div>
         </div>
       </div>
 
-      <div class="card" id="rightPanel">
+      <!-- right / advocates -->
+      <aside class="card" id="rightPanel" aria-label="Advocates">
         <h3 style="margin:0 0 10px 0">Advocates who worked on similar cases</h3>
-        <div id="advList" style="display:flex;flex-direction:column;gap:12px">
-          <!-- sample advocate -->
+
+        <div id="advList">
           <div class="adv-card">
-            <div class="adv-icon" style="width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,0.03);font-weight:700;">AN</div>
+            <div class="adv-icon">AN</div>
             <div class="adv-info">
               <div class="adv-name">Adv. Nisha Rao</div>
               <p>cyber, stalking</p>
@@ -169,6 +169,30 @@ The assistant will point to likely legal sections and show recent cases. This is
             <div style="margin-left:auto;display:flex;flex-direction:column;gap:8px">
               <a class="adv-link" href="mailto:nisha@example.com">Email</a>
               <a class="adv-link" href="tel:+910000000000">Call</a>
+            </div>
+          </div>
+
+          <div class="adv-card">
+            <div class="adv-icon">AK</div>
+            <div class="adv-info">
+              <div class="adv-name">Adv. Karan Mehta</div>
+              <p>defamation, social</p>
+            </div>
+            <div style="margin-left:auto;display:flex;flex-direction:column;gap:8px">
+              <a class="adv-link" href="mailto:karan@example.com">Email</a>
+              <a class="adv-link" href="tel:+910000000001">Call</a>
+            </div>
+          </div>
+
+          <div class="adv-card">
+            <div class="adv-icon">AP</div>
+            <div class="adv-info">
+              <div class="adv-name">Adv. Priya Sen</div>
+              <p>privacy, data, breach</p>
+            </div>
+            <div style="margin-left:auto;display:flex;flex-direction:column;gap:8px">
+              <a class="adv-link" href="mailto:priya@example.com">Email</a>
+              <a class="adv-link" href="tel:+910000000002">Call</a>
             </div>
           </div>
         </div>
@@ -181,17 +205,18 @@ The assistant will point to likely legal sections and show recent cases. This is
             <button class="btnSmall" id="payBtn">Pay for Process</button>
           </div>
         </div>
-      </div>
-    </div>
+      </aside>
 
-    <footer class="note">Cases shown above are sample/fake or permitted uploads.</footer>
+    </div> <!-- /.results -->
+
+    <footer class="note" style="margin-top:18px">Cases shown above are sample/fake or permitted uploads.</footer>
   </div>
 
-  <!-- chat floating button -->
-  <div class="chatFab" id="fab">💬</div>
+  <!-- chat FAB -->
+  <div class="chatFab" id="fab" role="button" aria-label="Open chat">💬</div>
 
-  <!-- Chat modal (hidden by default) -->
-  <div class="modal" id="chatModal" style="display:none">
+  <!-- Chat modal -->
+  <div class="modal" id="chatModal" style="display:none" role="dialog" aria-hidden="true">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
       <strong>SealLaw — Free Chat</strong>
       <button id="closeChat" class="btnSmall">Close</button>
@@ -203,10 +228,10 @@ The assistant will point to likely legal sections and show recent cases. This is
     </div>
   </div>
 
-  <!-- pinned floating tip (not follower) -->
+  <!-- floating tip (hidden) -->
   <div id="floatTip" class="floating" aria-hidden="true">Tip</div>
 
-  <!-- load your script only once -->
+  <!-- your script (load once) -->
   <script src="script.js"></script>
 </body>
 </html>
