@@ -105,3 +105,55 @@ textarea {
 .contact a:hover {
   text-decoration: underline;
 }
+/* ---------------- SealLaw AI UI additions ---------------- */
+
+/* typing / fade animations */
+.ai-typing { display:flex; gap:8px; align-items:center; font-size:14px; color:var(--muted); margin: 12px 0; }
+.typing-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.12); opacity:0.6; animation: blink 1s infinite; }
+.typing-dot:nth-child(2){ animation-delay:.15s } .typing-dot:nth-child(3){ animation-delay:.3s }
+@keyframes blink { 0%{transform:translateY(0); opacity:0.6} 50%{transform:translateY(-6px); opacity:1} 100%{transform:translateY(0); opacity:0.6} }
+
+.response-card { opacity:0; transform: translateY(8px); transition:opacity .36s ease, transform .36s ease; will-change: opacity, transform; margin-bottom:12px; border-radius:8px; padding:14px; background: rgba(255,255,255,0.02); }
+.response-card.visible { opacity:1; transform:none; }
+
+.ai-spinner { width:18px; height:18px; border-radius:50%; border:2px solid rgba(255,255,255,0.06); border-top-color:var(--accent); animation:spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg) } }
+
+.ai-analysing { font-size:13px; color:var(--muted); margin-left:10px; }
+
+/* chips / tags */
+.generated-tags .chip { display:inline-block; padding:6px 10px; margin:6px 6px 0 0; border-radius:16px; background:rgba(255,255,255,0.02); font-size:13px; }
+
+/* advocates card */
+.adv-card { display:flex; align-items:center; gap:12px; padding:10px; border-radius:10px; background: rgba(255,255,255,0.01); margin-bottom:10px; }
+.adv-card .adv-icon { width:36px; height:36px; display:grid; place-items:center; border-radius:8px; background: rgba(255,255,255,0.03); font-weight:700; }
+.adv-card .adv-info .adv-name { font-weight:700; }
+.adv-card .adv-actions { margin-left:auto; display:flex; flex-direction:column; gap:8px; }
+.adv-link { padding:6px 10px; border-radius:8px; background: rgba(255,255,255,0.02); text-decoration:none; }
+
+/* similar cases (small) */
+.similar-cases { margin-top:12px; }
+.case-item.small { padding:8px 10px; border-radius:8px; background: rgba(255,255,255,0.01); margin-bottom:8px; }
+
+/* --------- IMPORTANT: Disable annoying floating preview behavior --------- */
+/* This block prevents browser tooltips and custom floating elements from being visible.
+   It also blocks any element commonly used as a floating preview with these classes/ids.
+   If the floating element uses a different class, this still prevents the default tooltip. */
+
+.case-item, .case-item * { pointer-events: auto; } /* keep items interactive normally */
+[title] { /* remove native browser tooltips visually */
+  position: relative;
+}
+/* Hide any element that might be used as a hover-preview with common names */
+.floating-preview, .drag-preview, .hover-preview, .follow-cursor, .preview-tooltip { display: none !important; pointer-events: none !important; }
+
+/* Prevent user-select dragging ghost preview on cards */
+.case-item { -webkit-user-drag: none; user-drag: none; -webkit-user-select: text; user-select: text; }
+
+/* Ensure the main responses area doesn't create a floating draggable clone */
+.card, .response-card { -webkit-user-drag: none; user-drag: none; }
+
+/* small mobile/responsive adjustments */
+@media (max-width:900px) {
+  .adv-card .adv-actions { flex-direction:row; gap:8px; }
+}
