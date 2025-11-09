@@ -140,6 +140,23 @@
       <button id="sendChat" class="btnSmall">Send</button>
     </div>
   </div>
+  <!-- Search / Ask area (replace existing search markup) -->
+<div class="ask-row">
+  <input id="userQuery" class="search-input" placeholder="Describe your issue (e.g. online abuse, cyberstalking)..." />
+  <button id="askBtn" class="ask-button">Ask AI</button>
+</div>
+
+<!-- Inline micro status area (typing / analyser) -->
+<div id="aiStatus" style="min-height:40px;margin:12px 0;"></div>
+
+<!-- Responses container -->
+<div id="responses" aria-live="polite"></div>
+
+<!-- Advocates column (ensure this exists where your advocates are listed) -->
+<div id="advocatesList" class="advocates-list">
+  <!-- existing advocate cards will remain; JS will prepend Sai -->
+</div>
+
 
   <!-- floating tooltip -->
   <div id="floatTip" class="floating" aria-hidden="true"></div>
