@@ -5,22 +5,16 @@
 
 /* ---------- Theme variables ---------- */
 :root{
-  --bg: #0f1724;
-  --bg-2: #0b1220;
+  --bg: #345132; /* new background color you asked for */
+  --muted:#94a3b8;
+  --accent-a:#6ee7b7;
+  --accent-b:#60a5fa;
   --card: rgba(255,255,255,0.02);
-  --card-2: rgba(255,255,255,0.015);
-  --muted: #94a3b8;
-  --text: #e6eef8;
-  --accent-a: #6ee7b7;
-  --accent-b: #60a5fa;
-  --glass: rgba(255,255,255,0.03);
-  --glass-strong: rgba(255,255,255,0.045);
-  --shadow-strong: 0 18px 40px rgba(2,6,23,0.6);
+  --shadow: 0 18px 40px rgba(2,6,23,0.6);
   --radius: 12px;
-  --focus: 3px solid rgba(110,231,183,0.14);
-  --max-width: 1100px;
-  --ui-ease: 180ms;
+  --max-width:1100px;
 }
+
 
 /* ---------- Base / Reset ---------- */
 * { box-sizing: border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
