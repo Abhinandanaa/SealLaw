@@ -6,7 +6,6 @@
   <title>SealLaw — AI Legal Assistant</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 
   <style>
     /* ---------- Theme + base ---------- */
@@ -36,7 +35,8 @@
     input#q {flex:1;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px}
     button.primary {background: linear-gradient(90deg,var(--accent-a),var(--accent-b)); border:none;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer;}
     .chips{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-    .chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted);cursor:pointer}
+    .chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted);cursor:pointer;border:1px solid rgba(255,255,255,0.01)}
+    .chip:hover{transform:translateY(-3px); color:#fff; background:rgba(255,255,255,0.035)}
 
     /* results layout */
     .results { display:grid; grid-template-columns: 1fr 360px; gap:18px; margin-top:20px; align-items:start; }
@@ -98,14 +98,9 @@
         <input id="q" placeholder="Describe your issue (e.g. online abuse, cyberstalking, property dispute)..." />
         <button id="askBtn" class="primary">Ask AI</button>
       </div>
-      <div class="chips" id="chips">
-  <button class="chip" type="button">cyber abuse</button>
-  <button class="chip" type="button">defamation</button>
-  <button class="chip" type="button">data breach</button>
-  <button class="chip" type="button">stalking</button>
-  <button class="chip" type="button">online fraud</button>
-</div>
 
+      <!-- chips container (will be replaced by JS to ensure clean list) -->
+      <div class="chips" id="chips"></div>
     </div>
 
     <!-- results (left + right) -->
@@ -232,7 +227,42 @@
   <!-- floating tip (hidden) -->
   <div id="floatTip" class="floating" aria-hidden="true">Tip</div>
 
-  <!-- your script (load once) -->
+  <!-- tiny inline JS to enforce chips & behavior (runs before external script) -->
+  <script>
+    (function initChips(){
+      const desired = ["cyber abuse","defamation","data breach","stalking","online fraud"];
+      const chipsContainer = document.getElementById("chips");
+      const input = document.getElementById("q");
+      const askBtn = document.getElementById("askBtn");
+
+      if (!chipsContainer) return;
+      // clear anything inside (removes duplicates / ghosts)
+      chipsContainer.innerHTML = "";
+
+      desired.forEach(text => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip";
+        b.textContent = text;
+        b.addEventListener("click", (e) => {
+          e.preventDefault();
+          input.value = text;
+          input.focus();
+          // If you want chip clicks to auto-run the search, uncomment:
+          // if (askBtn) askBtn.click();
+        });
+        chipsContainer.appendChild(b);
+      });
+
+      // defensive: if something else later tries to add chips, keep ours
+      // (re-run once after a short delay to override other scripts)
+      setTimeout(() => {
+        if (!chipsContainer.querySelector('.chip')) initChips();
+      }, 400);
+    })();
+  </script>
+
+  <!-- your external script (if present) -->
   <script src="script.js"></script>
 </body>
 </html>
