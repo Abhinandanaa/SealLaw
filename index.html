@@ -18,7 +18,7 @@
 
 <div class="hero">
   <h1>SealLaw</h1>
-  <p>Building legal literacy and connecting citizens with advocates through verified public judgments.</p>
+  <p>Building legal literacy and bridging the gap between citizens and advocates through verified public judgments.</p>
 </div>
 
 <div class="search-box">
@@ -26,9 +26,35 @@
   <button onclick="searchCases()">Search</button>
 </div>
 
+<div class="chips">
+  <span class="chip" onclick="quickSearch('privacy')">Privacy</span>
+  <span class="chip" onclick="quickSearch('defamation')">Defamation</span>
+  <span class="chip" onclick="quickSearch('medical negligence')">Medical Negligence</span>
+  <span class="chip" onclick="quickSearch('cheque bounce')">Cheque Bounce</span>
+</div>
+
+<div class="filter-bar">
+  <select id="yearFilter">
+    <option value="">All Years</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+  </select>
+
+  <select id="courtFilter">
+    <option value="">All Courts</option>
+    <option value="Supreme Court">Supreme Court</option>
+    <option value="High Court">High Court</option>
+  </select>
+</div>
+
 <div class="card">
   <h3>Search Results</h3>
   <div id="resultsContainer"></div>
+  <div id="pagination" class="pagination"></div>
+</div>
+
+<div class="disclaimer">
+  SealLaw provides educational legal information based on publicly available judgments.
 </div>
 
 </div>
@@ -38,7 +64,7 @@
     <h3 id="modalTitle"></h3>
     <input id="authEmail" placeholder="Email">
     <input id="authPassword" type="password" placeholder="Password">
-    <button class="small-btn" onclick="submitAuth()">Submit</button>
+    <button onclick="submitAuth()">Submit</button>
     <button onclick="closeModal()">Cancel</button>
   </div>
 </div>
