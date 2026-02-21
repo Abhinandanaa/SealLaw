@@ -1,268 +1,287 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SealLaw — AI Legal Assistant</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SealLaw — AI Legal Assistant</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* ---------- Theme + base ---------- */
-    :root{
-      --bg:#0f1724; --muted:#94a3b8; --accent-a:#6ee7b7; --accent-b:#60a5fa;
-      --card: rgba(255,255,255,0.02);
-      --shadow: 0 18px 40px rgba(2,6,23,0.6);
-      --radius: 12px;
-      --max-width:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:
-      radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent),
-      radial-gradient(1000px 500px at 90% 90%, rgba(99,102,241,0.04), transparent),
-      var(--bg); color:#e6eef8}
-    .app{max-width:var(--max-width);margin:36px auto;padding:28px}
+<style>
+:root{
+  --primary:#3D5628;
+  --primary-dark:#2F441F;
+  --bg:#D9E7C7;
+  --card:#EEF5E6;
+  --text:#1E2A16;
+  --muted:#5E6F57;
+  --border:#C7D8B6;
+  --radius:18px;
+}
 
-    /* header */
-    header{display:flex;align-items:center;gap:16px;margin-bottom:6px}
-    #siteLogo { width:64px;height:64px;border-radius:14px; object-fit:cover; box-shadow:0 10px 30px rgba(2,6,23,0.6); background:rgba(255,255,255,0.02); padding:8px; border:1px solid rgba(255,255,255,0.02); }
-    h1{margin:0;font-size:22px}
-    p.lead{margin:4px 0 0;color:var(--muted);font-size:13px}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    /* search */
-    .searchCard{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.01));padding:20px;border-radius:14px;margin-top:12px;box-shadow:var(--shadow)}
-    .searchRow{display:flex;gap:12px}
-    input#q {flex:1;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px}
-    button.primary {background: linear-gradient(90deg,var(--accent-a),var(--accent-b)); border:none;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer;}
-    .chips{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-    .chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted);cursor:pointer;border:1px solid rgba(255,255,255,0.01)}
-    .chip:hover{transform:translateY(-3px); color:#fff; background:rgba(255,255,255,0.035)}
+.app{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-    /* results layout */
-    .results { display:grid; grid-template-columns: 1fr 360px; gap:18px; margin-top:20px; align-items:start; }
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;position:relative;overflow:visible; border:1px solid rgba(255,255,255,0.01)}
-    .sectionTag{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-weight:600;margin-bottom:10px}
+/* ---------- NAVBAR ---------- */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:var(--primary);
+  color:white;
+}
 
-    /* main card */
-    #suggestionTitle{margin:8px 0 0 0;font-size:28px}
-    #suggestionText{color:var(--muted);font-size:15px;line-height:1.6;margin:8px 0 0 0;white-space:pre-wrap}
+.navbar h2{
+  margin:0;
+  font-family:Playfair Display, serif;
+}
 
-    /* cases */
-    .casesList{display:flex;flex-direction:column;gap:12px;margin-top:8px}
-    .case{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.12));display:flex;align-items:center;gap:12px;transition:transform .15s,box-shadow .15s}
-    .case:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .case .meta{flex:1;min-width:0}
-    .case h4{margin:0;font-size:15px;color:#fff;font-weight:700}
-    .case p{margin:6px 0 0;color:#c5d4e1;font-size:13px;line-height:1.45}
-    .case .date{color:#c1d5e6;font-size:13px;white-space:nowrap}
-    .contact-btn{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#022;border:none;padding:8px 12px;border-radius:10px;font-weight:800;cursor:pointer;box-shadow:0 10px 28px rgba(36,116,116,0.08)}
+.nav-buttons button{
+  background:var(--bg);
+  border:none;
+  padding:8px 16px;
+  margin-left:10px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  color:var(--primary);
+}
 
-    /* right column */
-    aside#rightPanel{position:relative}
-    #advList{display:flex;flex-direction:column;gap:12px;margin-top:8px}
-    .adv-card{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.01)}
-    .adv-icon{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,0.03);font-weight:700}
-    .adv-info{font-size:14px}
-    .adv-link{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:#cfeeff;text-decoration:none;border:1px solid rgba(255,255,255,0.02)}
+/* ---------- HERO ---------- */
+.hero{
+  text-align:center;
+  padding:80px 20px 40px;
+}
 
-    /* actions below advocates */
-    .btnSmall{padding:10px 12px;border-radius:10px;border:none;font-weight:700;background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#022;cursor:pointer}
+.hero h1{
+  font-size:52px;
+  margin:0;
+  font-family:Playfair Display, serif;
+}
 
-    /* chat FAB/modal */
-    .chatFab{position:fixed;right:28px;bottom:28px;background:linear-gradient(90deg,#7c3aed,#06b6d4);width:64px;height:64px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;box-shadow:0 14px 30px rgba(12,12,30,0.6);z-index:2200}
-    .modal{position:fixed;right:28px;bottom:104px;width:360px;background:linear-gradient(180deg,#071029,#07131b);border-radius:12px;padding:12px;box-shadow:0 20px 60px rgba(2,6,23,0.6);transform-origin:bottom right;z-index:2150}
-    .msgs{height:320px;overflow:auto;padding:8px;display:flex;flex-direction:column;gap:8px}
+.hero p{
+  color:var(--muted);
+  margin-top:12px;
+  font-size:18px;
+}
 
-    /* floating tip hidden */
-    .floating{display:none}
+/* ---------- SEARCH ---------- */
+.search-container{
+  display:flex;
+  max-width:750px;
+  margin:40px auto;
+  background:white;
+  border-radius:999px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
 
-    /* responsive */
-    @media(max-width:980px){ .results{grid-template-columns:1fr} aside#rightPanel{order:2;margin-top:12px} }
-  </style>
+.search-container input{
+  flex:1;
+  border:none;
+  padding:18px;
+  font-size:16px;
+  outline:none;
+}
+
+.search-container button{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:0 30px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ---------- CATEGORY CHIPS ---------- */
+.chips{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.chip{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:8px 18px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.chip:hover{
+  background:var(--primary);
+  color:white;
+}
+
+/* ---------- RESULTS ---------- */
+.results{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+  margin-top:60px;
+}
+
+.card{
+  background:var(--card);
+  padding:24px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+}
+
+.card h3{
+  margin-top:0;
+}
+
+.case{
+  border-bottom:1px solid var(--border);
+  padding:12px 0;
+}
+
+.case:last-child{
+  border-bottom:none;
+}
+
+.contact-btn{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:6px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  margin-top:6px;
+}
+
+/* ---------- DISCLAIMER ---------- */
+.disclaimer{
+  background:#f3f8ec;
+  padding:20px;
+  border-radius:var(--radius);
+  margin-top:50px;
+  font-size:14px;
+  color:var(--muted);
+  border:1px solid var(--border);
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  margin-top:40px;
+  padding:30px;
+  text-align:center;
+  background:var(--primary);
+  color:white;
+  font-size:14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .results{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="app">
-    <!-- header -->
-    <header>
-      <img src="old.png" id="siteLogo" alt="SealLaw logo" />
-      <div>
-        <h1>SealLaw — AI Legal Assistant</h1>
-        <p class="lead">Ask a question, see likely law sections, related cases and contact advocates.</p>
-      </div>
-    </header>
 
-    <!-- search -->
-    <div class="searchCard card" id="searchCard">
-      <div class="searchRow">
-        <input id="q" placeholder="Describe your issue (e.g. online abuse, cyberstalking, property dispute)..." />
-        <button id="askBtn" class="primary">Ask AI</button>
-      </div>
+<!-- NAVBAR -->
+<div class="navbar">
+  <h2>SealLaw</h2>
+  <div class="nav-buttons">
+    <button>Sign In</button>
+    <button>Sign Up</button>
+  </div>
+</div>
 
-      <!-- chips container (will be replaced by JS to ensure clean list) -->
-      <div class="chips" id="chips"></div>
-    </div>
+<div class="app">
 
-    <!-- results (left + right) -->
-    <div class="results">
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Introducing SealLaw</h1>
+    <p>AI-powered legal assistant for simplified Indian law guidance.</p>
+  </section>
 
-      <!-- left / main -->
-      <div class="card" id="mainResult">
-        <div id="sectionInfo"><span class="sectionTag" id="lawSection">Try asking a question to get started</span></div>
-
-        <h2 id="suggestionTitle">Suggested next steps</h2>
-        <pre id="suggestionText">The assistant will point to likely legal sections and show recent cases. This is a demo: consult a lawyer for actual legal advice.</pre>
-
-        <div style="margin-top:14px">
-          <h3 style="margin:0 0 10px 0">Recent / Relevant Cases</h3>
-          <div class="casesList" id="casesList">
-
-            <!-- case 1 -->
-            <div class="case">
-              <div class="meta">
-                <h4>State vs. R. Kumar — Cyber Harassment</h4>
-                <p>Abusive messages and persistent threats via social media and messaging platforms. — <strong>IT Act — Cyber Harassment provisions</strong></p>
-              </div>
-              <div class="date">2025-03-12</div>
-              <button class="contact-btn" aria-label="Contact advocate for State vs R Kumar">Contact Adv.</button>
-            </div>
-
-            <!-- case 2 -->
-            <div class="case">
-              <div class="meta">
-                <h4>A vs B — Social Media Defamation</h4>
-                <p>False posts that damaged reputation; criminal & civil remedies pursued. — <strong>Section 499/500 IPC</strong></p>
-              </div>
-              <div class="date">2025-04-22</div>
-              <button class="contact-btn" aria-label="Contact advocate for A vs B">Contact Adv.</button>
-            </div>
-
-            <!-- case 3 -->
-            <div class="case">
-              <div class="meta">
-                <h4>XYZ Corp vs User — Data Breach Claim</h4>
-                <p>Unauthorized disclosure of personal data by an employee leading to claim. — <strong>IT Act — Data protection clauses</strong></p>
-              </div>
-              <div class="date">2024-11-09</div>
-              <button class="contact-btn" aria-label="Contact advocate for XYZ Corp vs User">Contact Adv.</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- right / advocates -->
-      <aside class="card" id="rightPanel" aria-label="Advocates">
-        <h3 style="margin:0 0 10px 0">Advocates who worked on similar cases</h3>
-
-        <div id="advList">
-          <div class="adv-card">
-            <div class="adv-icon">AN</div>
-            <div class="adv-info">
-              <div class="adv-name">Adv. Nisha Rao</div>
-              <p>cyber, stalking</p>
-            </div>
-            <div style="margin-left:auto;display:flex;flex-direction:column;gap:8px">
-              <a class="adv-link" href="mailto:nisha@example.com">Email</a>
-              <a class="adv-link" href="tel:+910000000000">Call</a>
-            </div>
-          </div>
-
-          <div class="adv-card">
-            <div class="adv-icon">AK</div>
-            <div class="adv-info">
-              <div class="adv-name">Adv. Karan Mehta</div>
-              <p>defamation, social</p>
-            </div>
-            <div style="margin-left:auto;display:flex;flex-direction:column;gap:8px">
-              <a class="adv-link" href="mailto:karan@example.com">Email</a>
-              <a class="adv-link" href="tel:+910000000001">Call</a>
-            </div>
-          </div>
-
-          <div class="adv-card">
-            <div class="adv-icon">AP</div>
-            <div class="adv-info">
-              <div class="adv-name">Adv. Priya Sen</div>
-              <p>privacy, data, breach</p>
-            </div>
-            <div style="margin-left:auto;display:flex;flex-direction:column;gap:8px">
-              <a class="adv-link" href="mailto:priya@example.com">Email</a>
-              <a class="adv-link" href="tel:+910000000002">Call</a>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:16px">
-          <h4 style="margin:0 0 8px 0">Want deeper help?</h4>
-          <p class="lead" style="color:var(--muted);font-size:13px;margin:0">Ask a free quick question or pay to start a formal engagement.</p>
-          <div style="display:flex;gap:8px;margin-top:10px">
-            <button class="btnSmall" id="openChat">Free Advice</button>
-            <button class="btnSmall" id="payBtn">Hire an Advocate</button>
-          </div>
-        </div>
-      </aside>
-
-    </div> <!-- /.results -->
-
-    <footer class="note" style="margin-top:18px">Cases shown above are sample/fake or permitted uploads.</footer>
+  <!-- SEARCH -->
+  <div class="search-container">
+    <input id="q" placeholder="Describe your legal issue..." />
+    <button id="askBtn">Ask AI</button>
   </div>
 
-  <!-- chat FAB -->
-  <div class="chatFab" id="fab" role="button" aria-label="Open chat">💬</div>
-
-  <!-- Chat modal -->
-  <div class="modal" id="chatModal" style="display:none" role="dialog" aria-hidden="true">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-      <strong>SealLaw — Free Chat</strong>
-      <button id="closeChat" class="btnSmall">Close</button>
-    </div>
-    <div class="msgs" id="msgs"></div>
-    <div class="chatInput" style="display:flex;gap:8px;margin-top:8px">
-      <input id="chatInp" placeholder="Ask a short question..." style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
-      <button id="sendChat" class="btnSmall">Send</button>
-    </div>
+  <!-- CHIPS -->
+  <div class="chips">
+    <button class="chip">Defamation</button>
+    <button class="chip">Cyber Abuse</button>
+    <button class="chip">GST Bill</button>
+    <button class="chip">Telecom Service</button>
   </div>
 
-  <!-- floating tip (hidden) -->
-  <div id="floatTip" class="floating" aria-hidden="true">Tip</div>
+  <!-- RESULTS -->
+  <div class="results">
 
-  <!-- tiny inline JS to enforce chips & behavior (runs before external script) -->
-  <script>
-    (function initChips(){
-      const desired = ["cyber abuse","defamation","data breach","stalking","online fraud"];
-      const chipsContainer = document.getElementById("chips");
-      const input = document.getElementById("q");
-      const askBtn = document.getElementById("askBtn");
+    <!-- CASES -->
+    <div class="card">
+      <h3>Recent / Relevant Cases</h3>
 
-      if (!chipsContainer) return;
-      // clear anything inside (removes duplicates / ghosts)
-      chipsContainer.innerHTML = "";
+      <div class="case">
+        <strong>State vs R. Kumar</strong>
+        <p>Cyber harassment through social media — IT Act provisions.</p>
+        <button class="contact-btn">Contact Advocate</button>
+      </div>
 
-      desired.forEach(text => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "chip";
-        b.textContent = text;
-        b.addEventListener("click", (e) => {
-          e.preventDefault();
-          input.value = text;
-          input.focus();
-          // If you want chip clicks to auto-run the search, uncomment:
-          // if (askBtn) askBtn.click();
-        });
-        chipsContainer.appendChild(b);
-      });
+      <div class="case">
+        <strong>A vs B — Social Media Defamation</strong>
+        <p>Reputation damage via false posts — Section 499/500 IPC.</p>
+        <button class="contact-btn">Contact Advocate</button>
+      </div>
 
-      // defensive: if something else later tries to add chips, keep ours
-      // (re-run once after a short delay to override other scripts)
-      setTimeout(() => {
-        if (!chipsContainer.querySelector('.chip')) initChips();
-      }, 400);
-    })();
-  </script>
+      <div class="case">
+        <strong>XYZ Corp vs User</strong>
+        <p>Data breach and unauthorized disclosure claim.</p>
+        <button class="contact-btn">Contact Advocate</button>
+      </div>
+    </div>
 
-  <!-- your external script (if present) -->
-  <script src="script.js"></script>
+    <!-- ADVOCATES -->
+    <div class="card">
+      <h3>Advocates who handled similar matters</h3>
+
+      <p><strong>Adv. Nisha Rao</strong><br>Cyber Law Specialist</p>
+      <p><strong>Adv. Karan Mehta</strong><br>Defamation & Media Law</p>
+      <p><strong>Adv. Priya Sen</strong><br>Data & Privacy Law</p>
+    </div>
+
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> SealLaw provides AI-generated legal information for educational and informational purposes only. 
+    It does not constitute legal advice and does not create an advocate-client relationship. 
+    Users are advised to consult a qualified legal professional before taking any action.
+    <br><br>
+    <strong>Note:</strong> Cases displayed on this platform may be sample representations or publicly available legal references.
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  SealLaw © 2026 — AI Legal Assistance Platform <br>
+  Privacy Policy | Terms of Use | Contact
+</footer>
+
 </body>
 </html>
