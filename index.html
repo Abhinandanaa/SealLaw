@@ -228,15 +228,36 @@ function displayCases(cases){
   }
 
   cases.forEach(c=>{
-    container.innerHTML += `
-      <div class="case">
-        <h4>${c.title}</h4>
-        <div class="meta">${(c.summary || "").substring(0,250)}...</div>
-        <div class="meta"><strong>Law:</strong> ${(c.law || []).join(", ")}</div>
-        <div class="meta"><strong>Helpline:</strong> ${c.helpline || "N/A"}</div>
-        <button class="small-btn" onclick="window.open('${c.reference}','_blank')">View Full Case</button>
-      </div>
-    `;
+    const caseDiv = document.createElement("div");
+    caseDiv.className = "case";
+
+    const title = document.createElement("h4");
+    title.textContent = c.title;   // plain text (no italics)
+
+    const summary = document.createElement("div");
+    summary.className = "meta";
+    summary.textContent = (c.summary || "").substring(0,250) + "...";
+
+    const law = document.createElement("div");
+    law.className = "meta";
+    law.innerHTML = "<strong>Law:</strong> " + (c.law || []).join(", ");
+
+    const helpline = document.createElement("div");
+    helpline.className = "meta";
+    helpline.innerHTML = "<strong>Helpline:</strong> " + (c.helpline || "N/A");
+
+    const button = document.createElement("button");
+    button.className = "small-btn";
+    button.textContent = "View Full Case";
+    button.onclick = () => window.open(c.reference, "_blank");
+
+    caseDiv.appendChild(title);
+    caseDiv.appendChild(summary);
+    caseDiv.appendChild(law);
+    caseDiv.appendChild(helpline);
+    caseDiv.appendChild(button);
+
+    container.appendChild(caseDiv);
   });
 }
 
