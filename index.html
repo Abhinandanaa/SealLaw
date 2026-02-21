@@ -18,7 +18,6 @@
   --border:#C7D8B6;
   --radius:18px;
 }
-
 *{box-sizing:border-box}
 body{
   margin:0;
@@ -26,14 +25,11 @@ body{
   background:var(--bg);
   color:var(--text);
 }
-
 .app{
   max-width:1200px;
   margin:auto;
   padding:40px 20px;
 }
-
-/* ---------- NAVBAR ---------- */
 .navbar{
   display:flex;
   justify-content:space-between;
@@ -42,12 +38,10 @@ body{
   background:var(--primary);
   color:white;
 }
-
 .navbar h2{
   margin:0;
   font-family:Playfair Display, serif;
 }
-
 .nav-buttons button{
   background:var(--bg);
   border:none;
@@ -58,26 +52,20 @@ body{
   font-weight:600;
   color:var(--primary);
 }
-
-/* ---------- HERO ---------- */
 .hero{
   text-align:center;
   padding:80px 20px 40px;
 }
-
 .hero h1{
   font-size:52px;
   margin:0;
   font-family:Playfair Display, serif;
 }
-
 .hero p{
   color:var(--muted);
   margin-top:12px;
   font-size:18px;
 }
-
-/* ---------- SEARCH ---------- */
 .search-container{
   display:flex;
   max-width:750px;
@@ -87,7 +75,6 @@ body{
   overflow:hidden;
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
-
 .search-container input{
   flex:1;
   border:none;
@@ -95,7 +82,6 @@ body{
   font-size:16px;
   outline:none;
 }
-
 .search-container button{
   background:var(--primary);
   color:white;
@@ -104,8 +90,6 @@ body{
   font-weight:600;
   cursor:pointer;
 }
-
-/* ---------- CATEGORY CHIPS ---------- */
 .chips{
   display:flex;
   justify-content:center;
@@ -113,7 +97,6 @@ body{
   flex-wrap:wrap;
   margin-top:20px;
 }
-
 .chip{
   background:var(--card);
   border:1px solid var(--border);
@@ -122,51 +105,47 @@ body{
   cursor:pointer;
   transition:0.2s;
 }
-
 .chip:hover{
   background:var(--primary);
   color:white;
 }
-
-/* ---------- RESULTS ---------- */
 .results{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:30px;
   margin-top:60px;
 }
-
 .card{
   background:var(--card);
   padding:24px;
   border-radius:var(--radius);
   box-shadow:0 6px 20px rgba(0,0,0,0.05);
 }
-
-.card h3{
-  margin-top:0;
-}
-
 .case{
   border-bottom:1px solid var(--border);
-  padding:12px 0;
+  padding:16px 0;
 }
-
 .case:last-child{
   border-bottom:none;
 }
-
-.contact-btn{
+.case h4{
+  margin:0;
+}
+.meta{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:8px;
+}
+.btn-row{
+  margin-top:10px;
+}
+.small-btn{
   background:var(--primary);
   color:white;
   border:none;
   padding:6px 12px;
   border-radius:999px;
   cursor:pointer;
-  margin-top:6px;
+  margin-right:8px;
+  font-size:13px;
 }
-
-/* ---------- DISCLAIMER ---------- */
 .disclaimer{
   background:#f3f8ec;
   padding:20px;
@@ -176,8 +155,6 @@ body{
   color:var(--muted);
   border:1px solid var(--border);
 }
-
-/* ---------- FOOTER ---------- */
 footer{
   margin-top:40px;
   padding:30px;
@@ -186,19 +163,11 @@ footer{
   color:white;
   font-size:14px;
 }
-
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:900px){
-  .results{
-    grid-template-columns:1fr;
-  }
-}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
   <h2>SealLaw</h2>
   <div class="nav-buttons">
@@ -209,79 +178,95 @@ footer{
 
 <div class="app">
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Introducing SealLaw</h1>
-    <p>AI-powered legal assistant for simplified Indian law guidance.</p>
-  </section>
+<section class="hero">
+  <h1>Introducing SealLaw</h1>
+  <p>AI-powered legal assistant backed by 100+ verified Supreme Court judgments.</p>
+</section>
 
-  <!-- SEARCH -->
-  <div class="search-container">
-    <input id="q" placeholder="Describe your legal issue..." />
-    <button id="askBtn">Ask AI</button>
+<div class="search-container">
+  <input id="q" placeholder="Describe your legal issue..." />
+  <button id="askBtn">Search</button>
+</div>
+
+<div class="chips">
+  <button class="chip">Privacy</button>
+  <button class="chip">Medical Negligence</button>
+  <button class="chip">Cheque Bounce</button>
+  <button class="chip">Motor Accident</button>
+  <button class="chip">Constitution</button>
+</div>
+
+<div class="results">
+  <div class="card">
+    <h3>Search Results</h3>
+    <div id="casesContainer"></div>
   </div>
+</div>
 
-  <!-- CHIPS -->
-  <div class="chips">
-    <button class="chip">Defamation</button>
-    <button class="chip">Cyber Abuse</button>
-    <button class="chip">GST Bill</button>
-    <button class="chip">Telecom Service</button>
-  </div>
-
-  <!-- RESULTS -->
-  <div class="results">
-
-    <!-- CASES -->
-    <div class="card">
-      <h3>Recent / Relevant Cases</h3>
-
-      <div class="case">
-        <strong>State vs R. Kumar</strong>
-        <p>Cyber harassment through social media — IT Act provisions.</p>
-        <button class="contact-btn">Contact Advocate</button>
-      </div>
-
-      <div class="case">
-        <strong>A vs B — Social Media Defamation</strong>
-        <p>Reputation damage via false posts — Section 499/500 IPC.</p>
-        <button class="contact-btn">Contact Advocate</button>
-      </div>
-
-      <div class="case">
-        <strong>XYZ Corp vs User</strong>
-        <p>Data breach and unauthorized disclosure claim.</p>
-        <button class="contact-btn">Contact Advocate</button>
-      </div>
-    </div>
-
-    <!-- ADVOCATES -->
-    <div class="card">
-      <h3>Advocates who handled similar matters</h3>
-
-      <p><strong>Adv. Nisha Rao</strong><br>Cyber Law Specialist</p>
-      <p><strong>Adv. Karan Mehta</strong><br>Defamation & Media Law</p>
-      <p><strong>Adv. Priya Sen</strong><br>Data & Privacy Law</p>
-    </div>
-
-  </div>
-
-  <!-- DISCLAIMER -->
-  <div class="disclaimer">
-    <strong>Disclaimer:</strong> SealLaw provides AI-generated legal information for educational and informational purposes only. 
-    It does not constitute legal advice and does not create an advocate-client relationship. 
-    Users are advised to consult a qualified legal professional before taking any action.
-    <br><br>
-    <strong>Note:</strong> Cases displayed on this platform may be sample representations or publicly available legal references.
-  </div>
+<div class="disclaimer">
+  <strong>Disclaimer:</strong> SealLaw provides educational legal information based on publicly available judgments from Indian Kanoon. It does not constitute legal advice.
+</div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
-  SealLaw © 2026 — AI Legal Assistance Platform <br>
-  Privacy Policy | Terms of Use | Contact
+  SealLaw © 2026 — AI Legal Assistance Platform
 </footer>
+
+<script>
+let casesData = [];
+
+fetch("cases.json")
+  .then(res => res.json())
+  .then(data => {
+    casesData = data;
+    displayCases(casesData.slice(0,5)); // show first 5 initially
+  });
+
+function displayCases(cases){
+  const container = document.getElementById("casesContainer");
+  container.innerHTML = "";
+
+  if(cases.length === 0){
+    container.innerHTML = "<p>No matching cases found.</p>";
+    return;
+  }
+
+  cases.forEach(c => {
+    const div = document.createElement("div");
+    div.className = "case";
+    div.innerHTML = `
+      <h4>${c.title}</h4>
+      <div class="meta">${c.summary.substring(0,300)}...</div>
+      <div class="meta"><strong>Law:</strong> ${c.law.join(", ")}</div>
+      <div class="meta"><strong>Helpline:</strong> ${c.helpline}</div>
+      <div class="btn-row">
+        <button class="small-btn" onclick="window.open('${c.reference}','_blank')">View Full Case</button>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+document.getElementById("askBtn").addEventListener("click", searchCases);
+
+function searchCases(){
+  const query = document.getElementById("q").value.toLowerCase();
+  const filtered = casesData.filter(c =>
+    c.title.toLowerCase().includes(query) ||
+    c.summary.toLowerCase().includes(query) ||
+    c.law.join(" ").toLowerCase().includes(query)
+  );
+  displayCases(filtered.slice(0,10));
+}
+
+document.querySelectorAll(".chip").forEach(chip => {
+  chip.addEventListener("click", function(){
+    document.getElementById("q").value = this.innerText;
+    searchCases();
+  });
+});
+</script>
 
 </body>
 </html>
