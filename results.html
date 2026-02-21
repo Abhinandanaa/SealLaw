@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SealLaw — Results</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#3D5628;
+  --primary-dark:#2F441F;
+  --bg:#D9E7C7;
+  --card:#EEF5E6;
+  --text:#1E2A16;
+  --muted:#5E6F57;
+  --border:#C7D8B6;
+  --radius:20px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:var(--primary);
+  color:white;
+}
+
+.navbar h2{
+  margin:0;
+  font-family:Playfair Display, serif;
+}
+
+.app{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+h1{
+  font-family:Playfair Display, serif;
+  margin-bottom:10px;
+}
+
+.muted{
+  color:var(--muted);
+  margin-bottom:40px;
+}
+
+/* layout */
+.results{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:var(--radius);
+  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.section-title{
+  margin-top:0;
+}
+
+/* clickable case */
+.case{
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.case:hover{
+  transform:translateX(5px);
+}
+
+.case:last-child{
+  border-bottom:none;
+}
+
+.tag{
+  display:inline-block;
+  background:var(--primary);
+  color:white;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+  margin-top:6px;
+}
+
+/* advocate */
+.adv{
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+  cursor:pointer;
+}
+
+.adv:last-child{
+  border-bottom:none;
+}
+
+.adv:hover{
+  color:var(--primary);
+}
+
+/* back */
+.back-btn{
+  margin-top:40px;
+  display:inline-block;
+  padding:10px 20px;
+  background:var(--primary);
+  color:white;
+  border-radius:999px;
+  text-decoration:none;
+}
+
+@media(max-width:900px){
+  .results{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <h2 onclick="location.href='index.html'" style="cursor:pointer;">SealLaw</h2>
+</div>
+
+<div class="app">
+
+  <h1 id="queryTitle">Legal Guidance</h1>
+  <p class="muted" id="queryDesc"></p>
+
+  <div class="results">
+
+    <!-- LEFT COLUMN -->
+    <div class="card">
+      <h3 class="section-title">Likely Applicable Law Sections</h3>
+      <div id="lawSections"></div>
+
+      <h3 class="section-title" style="margin-top:30px;">Related Cases</h3>
+      <div id="cases"></div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="card">
+      <h3 class="section-title">Advocates (Similar Matters)</h3>
+      <div id="advocates"></div>
+    </div>
+
+  </div>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const query = (params.get("q") || "").toLowerCase();
+
+const data = {
+
+  "defamation": {
+    desc: "Defamation involves harm to reputation through false statements.",
+    laws: ["IPC Section 499", "IPC Section 500"],
+    cases: [
+      "Subramanian Swamy v. Union of India (2016)",
+      "R. Rajagopal v. State of Tamil Nadu (1994)"
+    ],
+    advocates: ["Adv. Karan Mehta", "Adv. Riya Sharma"]
+  },
+
+  "cyber abuse": {
+    desc: "Cyber abuse includes online harassment, threats, and stalking.",
+    laws: ["IT Act Section 66A", "IPC Section 354D (Stalking)"],
+    cases: [
+      "Shreya Singhal v. Union of India (2015)",
+      "State v. R. Kumar (Cyber Harassment)"
+    ],
+    advocates: ["Adv. Nisha Rao", "Adv. Aditya Verma"]
+  },
+
+  "gst bill": {
+    desc: "GST disputes relate to taxation, billing, and compliance issues.",
+    laws: ["CGST Act 2017 Section 16", "CGST Act 2017 Section 73"],
+    cases: [
+      "Mohit Minerals v. Union of India (2022)",
+      "Canon India v. Commissioner of Customs"
+    ],
+    advocates: ["Adv. Deepak Jain", "Adv. Sneha Kapoor"]
+  },
+
+  "telecom service": {
+    desc: "Telecom disputes may involve service interruption or unfair billing.",
+    laws: ["Telecom Regulatory Authority of India Act", "Consumer Protection Act 2019"],
+    cases: [
+      "Vodafone Idea Ltd. v. Union of India",
+      "BSNL v. TRAI"
+    ],
+    advocates: ["Adv. Priya Sen", "Adv. Arjun Malhotra"]
+  }
+
+};
+
+const result = data[query] || {
+  desc: "No structured data available. Please consult an advocate.",
+  laws: ["Consult a qualified legal professional"],
+  cases: ["Case data unavailable"],
+  advocates: ["Advocate suggestion pending"]
+};
+
+document.getElementById("queryTitle").innerText = query.charAt(0).toUpperCase() + query.slice(1);
+document.getElementById("queryDesc").innerText = result.desc;
+
+const lawDiv = document.getElementById("lawSections");
+result.laws.forEach(law => {
+  const el = document.createElement("div");
+  el.innerHTML = `<div class="case">${law} <div class="tag">Section</div></div>`;
+  lawDiv.appendChild(el);
+});
+
+const caseDiv = document.getElementById("cases");
+result.cases.forEach(c => {
+  const el = document.createElement("div");
+  el.className = "case";
+  el.innerText = c;
+  el.onclick = () => alert("Full case view coming soon.");
+  caseDiv.appendChild(el);
+});
+
+const advDiv = document.getElementById("advocates");
+result.advocates.forEach(a => {
+  const el = document.createElement("div");
+  el.className = "adv";
+  el.innerText = a;
+  el.onclick = () => alert("Advocate contact feature coming soon.");
+  advDiv.appendChild(el);
+});
+</script>
+
+</body>
+</html>
