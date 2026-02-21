@@ -28,6 +28,14 @@ body{
   color:var(--text);
   line-height:1.6;
 }
+.case h4{
+  font-style: normal !important;
+  font-weight: 600;
+}
+
+.case .meta{
+  font-style: normal !important;
+}
 
 /* ---------- Layout Container ---------- */
 .app{
