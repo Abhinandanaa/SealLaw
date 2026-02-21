@@ -1,139 +1,245 @@
 /* =====================================================
-   SealLaw — Complete style.css (dark theme, high-contrast)
-   Replace your existing style.css with this file
+   SealLaw — Professional Green Theme
    ===================================================== */
 
-/* ---------- Theme variables ---------- */
+/* ---------- Theme Variables ---------- */
 :root{
-  --bg: #345132; /* new background color you asked for */
-  --muted:#94a3b8;
-  --accent-a:#6ee7b7;
-  --accent-b:#60a5fa;
-  --card: rgba(255,255,255,0.02);
-  --shadow: 0 18px 40px rgba(2,6,23,0.6);
-  --radius: 12px;
-  --max-width:1100px;
+  --primary:#3D5628;
+  --primary-dark:#2F441F;
+  --bg:#D9E7C7;
+  --card:#EEF5E6;
+  --text:#1E2A16;
+  --muted:#5E6F57;
+  --border:#C7D8B6;
+  --radius:18px;
+  --shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
-
-/* ---------- Base / Reset ---------- */
-* { box-sizing: border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-html,body { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:
-  radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent),
-  radial-gradient(1000px 500px at 90% 90%, rgba(99,102,241,0.04), transparent),
-  var(--bg); color: var(--text);
-  -webkit-tap-highlight-color: transparent;
+/* ---------- Reset ---------- */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-/* Remove default focus outline but keep accessible focus */
-:focus { outline: none; box-shadow: none; }
-a,button,input,textarea { font-family: inherit; }
-
-/* ---------- Layout container ---------- */
-.app { max-width: var(--max-width); margin: 36px auto; padding: 28px; }
-
-/* ---------- Header ---------- */
-header { display:flex; align-items:center; gap:16px; margin-bottom: 10px; }
-#siteLogo { width:64px; height:64px; border-radius:14px; object-fit:cover;
-  background: rgba(255,255,255,0.02); padding:8px; box-shadow: var(--shadow-strong);
-  border: 1px solid rgba(255,255,255,0.02); opacity:1; transition: transform var(--ui-ease);
-}
-#siteLogo:hover { transform: translateY(-3px); }
-
-/* Title */
-h1 { margin:0; font-size:22px; font-weight:700; color:var(--text) }
-p.lead { margin:4px 0 0; color:var(--muted); font-size:13px }
-
-/* ---------- Search card ---------- */
-.searchCard { background: linear-gradient(180deg, var(--card), var(--card-2)); padding:20px; border-radius:var(--radius); margin-top:12px; box-shadow: var(--shadow-strong); border: 1px solid rgba(255,255,255,0.01); }
-.searchRow { display:flex; gap:12px; align-items:center; }
-input.search, input#q { flex:1; padding:14px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background: transparent; color:var(--text); font-size:15px; }
-input.search::placeholder, input#q::placeholder { color: rgba(230,238,248,0.45); }
-button.primary, .ask-button { background: linear-gradient(90deg, var(--accent-a), var(--accent-b)); border:none; padding:12px 16px; border-radius:10px; font-weight:700; cursor:pointer; color:#022; box-shadow: 0 8px 18px rgba(96,165,250,0.06); transition: transform var(--ui-ease), box-shadow var(--ui-ease); }
-button.primary:active, .ask-button:active { transform: translateY(1px); }
-button.primary:focus, .ask-button:focus, input#q:focus { box-shadow: var(--focus); outline: none; }
-
-/* chips */
-.chips { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
-.chip { background: rgba(255,255,255,0.02); padding:8px 10px; border-radius:999px; font-size:13px; color:var(--muted); cursor:pointer; transition: transform .12s ease, background .12s ease; }
-.chip:hover { transform: translateY(-4px); background: rgba(255,255,255,0.03); color: var(--text); }
-
-/* ---------- Results area ---------- */
-.results { display:grid; grid-template-columns: 2fr 1fr; gap:18px; margin-top:20px; align-items:start; }
-
-/* generic card */
-.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; position:relative; overflow:visible; border: 1px solid rgba(255,255,255,0.01); }
-.sectionTag { display:inline-block; background: rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px; font-weight:600; margin-bottom:10px; color:var(--text) }
-
-/* suggestion area */
-#suggestionTitle { margin: 8px 0; font-size:28px; font-weight:700; color:var(--text) }
-#suggestionText { color: var(--muted); font-size:15px; line-height:1.6; margin:8px 0 0 0; background:transparent; border: none; padding:0; }
-
-/* cases list */
-.casesList { display:flex; flex-direction:column; gap:12px; margin-top:8px; }
-.case { padding:12px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.12)); display:flex; justify-content:space-between; align-items:center; cursor:default; position:relative; transition: transform .15s ease, box-shadow .15s ease; border: 1px solid rgba(255,255,255,0.01); }
-.case:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.6); }
-.case .meta { max-width:72%; }
-.case h4 { margin:0; font-size:15px; color: #ffffff; font-weight:700; text-shadow: 0 1px 0 rgba(0,0,0,0.35); }
-.case p { margin:4px 0 0; color: #c5d4e1; font-size:13px; line-height:1.45; opacity:0.98; }
-
-/* case date / meta */
-.case .meta-date, .case .date { color: #c1d5e6; opacity:0.95; font-size:13px; }
-
-/* Contact Adv button inside case (selector covers possible button variants) */
-.case .contact-btn, .case .contact-adv, .case button.contact, .case .case-cta {
-  background: rgba(255,255,255,0.04); color: #eaf6ff; border: 1px solid rgba(255,255,255,0.04); padding:8px 12px; border-radius:10px; box-shadow: 0 6px 18px rgba(2,6,23,0.55); font-weight:700; cursor:pointer;
-}
-.case .contact-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.06); }
-
-/* ---------- Right panel (advocates) ---------- */
-#rightPanel { position: relative; }
-#advList { display:flex; flex-direction:column; gap:12px; margin-top:8px; }
-.adv-card { display:flex; align-items:center; gap:12px; padding:10px; border-radius:10px; background: rgba(255,255,255,0.01); margin-bottom:0; border: 1px solid rgba(255,255,255,0.01); }
-.adv-card .adv-icon { width:46px; height:46px; display:grid; place-items:center; border-radius:10px; background: rgba(255,255,255,0.03); font-weight:700; color:var(--text); }
-.adv-card .adv-info { font-size:14px; color:var(--text); }
-.adv-card .adv-info .adv-name { font-weight:700; }
-.adv-card .adv-info p { margin:2px 0; color:var(--muted); font-size:13px; }
-.adv-card .adv-actions { margin-left:auto; display:flex; flex-direction:column; gap:8px; }
-.adv-link { padding:6px 10px; border-radius:8px; background: rgba(255,255,255,0.02); text-decoration:none; color:#cfeeff; border:1px solid rgba(255,255,255,0.02); box-shadow: 0 8px 20px rgba(2,6,23,0.35); }
-
-/* Primary / small action buttons */
-.btnSmall, #openChat, #payBtn { padding:10px 12px; border-radius:10px; border:none; cursor:pointer; font-weight:700; background: linear-gradient(90deg, var(--accent-a), var(--accent-b)); color:#022; box-shadow: 0 10px 28px rgba(36,116,116,0.08); }
-.btnSmall.secondary { background: rgba(255,255,255,0.03); color:var(--text); border:1px solid rgba(255,255,255,0.02); box-shadow:none; }
-
-/* ---------- Chat FAB and modal ---------- */
-.chatFab { position:fixed; right:28px; bottom:28px; background:linear-gradient(90deg,#7c3aed,#06b6d4); width:64px; height:64px; border-radius:20px; display:flex; align-items:center; justify-content:center; font-weight:800; cursor:pointer; box-shadow: 0 14px 30px rgba(12,12,30,0.6); z-index:2200; }
-.modal { position:fixed; right:28px; bottom:104px; width:360px; background: linear-gradient(180deg,#071029,#07131b); border-radius:12px; padding:12px; box-shadow: 0 20px 60px rgba(2,6,23,0.6); transform-origin:bottom right; z-index:2150; }
-.msgs { height:320px; overflow:auto; padding:8px; display:flex; flex-direction:column; gap:8px; }
-.msg { max-width:80%; padding:10px; border-radius:10px; }
-.msg.user { align-self:flex-end; background: linear-gradient(90deg,#0ea5a4,#60a5fa); color:#022; }
-.msg.bot { align-self:flex-start; background: rgba(255,255,255,0.03); color:var(--text); }
-
-/* ---------- Floating tip (pinned hidden) ---------- */
-.floating { position: fixed; pointer-events:none; z-index:2400; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); padding:10px; border-radius:10px; min-width:220px; box-shadow: 0 18px 40px rgba(2,6,23,0.6); font-size:13px; color:var(--muted); left:20px; bottom:20px; display:none; }
-
-/* ---------- Accessibility helpers ---------- */
-button, .chip, .adv-link, .case .contact-btn { transition: all var(--ui-ease) ease; }
-[role="button"]:focus, button:focus, .adv-link:focus { box-shadow: var(--focus); outline:none; }
-
-/* Increase tap target for small clickable elements */
-.case .contact-btn, .adv-card .adv-link, .btnSmall { min-height:38px; padding-left:12px; padding-right:12px; }
-
-/* ---------- Prevent common floating preview classes (safety) ---------- */
-/* Hide known preview helper elements if present (non-destructive) */
-.floating-preview, .drag-preview, .hover-preview, .follow-cursor, .preview-tooltip { display:none !important; pointer-events:none !important; }
-
-/* Prevent browser drag-image clones (stops many follow-cursor previews) */
-* { -webkit-user-drag: none; user-drag: none; }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 980px) {
-  .results { grid-template-columns: 1fr; }
-  #rightPanel { order: 2; }
-  .chatFab { right:14px; bottom:18px; }
-  .modal { right:14px; bottom:84px; width: 92%; left: 4%; }
+body{
+  font-family:Inter, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
 
-/* ---------- Minor visual niceties ---------- */
-.case small, .case .case-sub { color: var(--muted); font-size:13px; }
-.card, .case, .adv-card { will-change: transform, opacity; }
+/* ---------- Layout Container ---------- */
+.app{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* ---------- Navbar ---------- */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:var(--primary);
+  color:white;
+}
+
+.navbar h2{
+  font-family:'Playfair Display', serif;
+  cursor:pointer;
+}
+
+.nav-buttons button{
+  background:white;
+  color:var(--primary);
+  border:none;
+  padding:8px 16px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+  margin-left:10px;
+  transition:0.2s;
+}
+
+.nav-buttons button:hover{
+  background:var(--card);
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  text-align:center;
+  padding:80px 20px 40px;
+}
+
+.hero h1{
+  font-family:'Playfair Display', serif;
+  font-size:48px;
+}
+
+.hero p{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* ---------- Search ---------- */
+.search-container{
+  display:flex;
+  max-width:750px;
+  margin:40px auto;
+  background:white;
+  border-radius:999px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.search-container input{
+  flex:1;
+  border:none;
+  padding:18px;
+  font-size:16px;
+  outline:none;
+}
+
+.search-container button{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:0 30px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.search-container button:hover{
+  background:var(--primary-dark);
+}
+
+/* ---------- Chips ---------- */
+.chips{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.chip{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:8px 18px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.chip:hover{
+  background:var(--primary);
+  color:white;
+}
+
+/* ---------- Cards ---------- */
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:20px;
+}
+
+/* ---------- Results Grid ---------- */
+.results{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+  margin-top:60px;
+}
+
+@media(max-width:900px){
+  .results{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ---------- Case Item ---------- */
+.case{
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  transition:0.2s;
+}
+
+.case:last-child{
+  border-bottom:none;
+}
+
+.case h4{
+  margin-bottom:6px;
+}
+
+.meta{
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ---------- Tags ---------- */
+.tag{
+  display:inline-block;
+  background:var(--primary);
+  color:white;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+  margin:4px 6px 4px 0;
+}
+
+/* ---------- Buttons ---------- */
+.btnSmall{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:6px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  font-size:13px;
+  transition:0.2s;
+}
+
+.btnSmall:hover{
+  background:var(--primary-dark);
+}
+
+/* ---------- Disclaimer ---------- */
+.disclaimer{
+  background:#f3f8ec;
+  padding:20px;
+  border-radius:var(--radius);
+  margin-top:50px;
+  font-size:14px;
+  color:var(--muted);
+  border:1px solid var(--border);
+}
+
+/* ---------- Footer ---------- */
+footer{
+  margin-top:40px;
+  padding:30px;
+  text-align:center;
+  background:var(--primary);
+  color:white;
+  font-size:14px;
+}
+
+/* ---------- Floating Search (future-ready) ---------- */
+.floating-search{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:white;
+  padding:12px 20px;
+  border-radius:999px;
+  box-shadow:var(--shadow);
+  display:none;
+}
