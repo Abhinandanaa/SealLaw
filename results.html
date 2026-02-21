@@ -10,7 +10,6 @@
 <style>
 :root{
   --primary:#3D5628;
-  --primary-dark:#2F441F;
   --bg:#D9E7C7;
   --card:#EEF5E6;
   --text:#1E2A16;
@@ -18,7 +17,6 @@
   --border:#C7D8B6;
   --radius:20px;
 }
-
 *{box-sizing:border-box}
 body{
   margin:0;
@@ -26,7 +24,6 @@ body{
   background:var(--bg);
   color:var(--text);
 }
-
 .navbar{
   display:flex;
   justify-content:space-between;
@@ -35,62 +32,60 @@ body{
   background:var(--primary);
   color:white;
 }
-
 .navbar h2{
   margin:0;
   font-family:Playfair Display, serif;
+  cursor:pointer;
 }
-
 .app{
   max-width:1200px;
   margin:auto;
   padding:50px 20px;
 }
-
 h1{
   font-family:Playfair Display, serif;
   margin-bottom:10px;
 }
-
 .muted{
   color:var(--muted);
   margin-bottom:40px;
 }
-
-/* layout */
 .results{
   display:grid;
   grid-template-columns:2fr 1fr;
   gap:30px;
 }
-
 .card{
   background:var(--card);
   padding:25px;
   border-radius:var(--radius);
   box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
-
-.section-title{
-  margin-top:0;
-}
-
-/* clickable case */
 .case{
   padding:14px 0;
   border-bottom:1px solid var(--border);
-  cursor:pointer;
-  transition:0.2s;
 }
-
-.case:hover{
-  transform:translateX(5px);
-}
-
 .case:last-child{
   border-bottom:none;
 }
-
+.case h4{
+  margin:0;
+}
+.meta{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:6px;
+}
+.small-btn{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:6px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  font-size:12px;
+  margin-top:8px;
+}
 .tag{
   display:inline-block;
   background:var(--primary);
@@ -100,23 +95,6 @@ h1{
   font-size:12px;
   margin-top:6px;
 }
-
-/* advocate */
-.adv{
-  padding:12px 0;
-  border-bottom:1px solid var(--border);
-  cursor:pointer;
-}
-
-.adv:last-child{
-  border-bottom:none;
-}
-
-.adv:hover{
-  color:var(--primary);
-}
-
-/* back */
 .back-btn{
   margin-top:40px;
   display:inline-block;
@@ -126,7 +104,6 @@ h1{
   border-radius:999px;
   text-decoration:none;
 }
-
 @media(max-width:900px){
   .results{
     grid-template-columns:1fr;
@@ -138,29 +115,29 @@ h1{
 <body>
 
 <div class="navbar">
-  <h2 onclick="location.href='index.html'" style="cursor:pointer;">SealLaw</h2>
+  <h2 onclick="location.href='index.html'">SealLaw</h2>
 </div>
 
 <div class="app">
 
-  <h1 id="queryTitle">Legal Guidance</h1>
+  <h1 id="queryTitle">Search Results</h1>
   <p class="muted" id="queryDesc"></p>
 
   <div class="results">
 
-    <!-- LEFT COLUMN -->
+    <!-- LEFT -->
     <div class="card">
-      <h3 class="section-title">Likely Applicable Law Sections</h3>
+      <h3>Applicable Law Sections</h3>
       <div id="lawSections"></div>
 
-      <h3 class="section-title" style="margin-top:30px;">Related Cases</h3>
-      <div id="cases"></div>
+      <h3 style="margin-top:30px;">Related Cases</h3>
+      <div id="casesContainer"></div>
     </div>
 
-    <!-- RIGHT COLUMN -->
+    <!-- RIGHT -->
     <div class="card">
-      <h3 class="section-title">Advocates (Similar Matters)</h3>
-      <div id="advocates"></div>
+      <h3>Liability Notes</h3>
+      <div id="liabilityContainer"></div>
     </div>
 
   </div>
@@ -170,87 +147,69 @@ h1{
 </div>
 
 <script>
+
 const params = new URLSearchParams(window.location.search);
 const query = (params.get("q") || "").toLowerCase();
 
-const data = {
+document.getElementById("queryTitle").innerText =
+  query ? "Results for: " + query : "Legal Results";
 
-  "defamation": {
-    desc: "Defamation involves harm to reputation through false statements.",
-    laws: ["IPC Section 499", "IPC Section 500"],
-    cases: [
-      "Subramanian Swamy v. Union of India (2016)",
-      "R. Rajagopal v. State of Tamil Nadu (1994)"
-    ],
-    advocates: ["Adv. Karan Mehta", "Adv. Riya Sharma"]
-  },
+fetch("cases.json")
+  .then(res => res.json())
+  .then(data => {
 
-  "cyber abuse": {
-    desc: "Cyber abuse includes online harassment, threats, and stalking.",
-    laws: ["IT Act Section 66A", "IPC Section 354D (Stalking)"],
-    cases: [
-      "Shreya Singhal v. Union of India (2015)",
-      "State v. R. Kumar (Cyber Harassment)"
-    ],
-    advocates: ["Adv. Nisha Rao", "Adv. Aditya Verma"]
-  },
+    const filtered = data.filter(c =>
+      c.title.toLowerCase().includes(query) ||
+      c.summary.toLowerCase().includes(query) ||
+      c.law.join(" ").toLowerCase().includes(query)
+    );
 
-  "gst bill": {
-    desc: "GST disputes relate to taxation, billing, and compliance issues.",
-    laws: ["CGST Act 2017 Section 16", "CGST Act 2017 Section 73"],
-    cases: [
-      "Mohit Minerals v. Union of India (2022)",
-      "Canon India v. Commissioner of Customs"
-    ],
-    advocates: ["Adv. Deepak Jain", "Adv. Sneha Kapoor"]
-  },
+    if(filtered.length === 0){
+      document.getElementById("queryDesc").innerText =
+        "No matching cases found. Try broader keywords.";
+      return;
+    }
 
-  "telecom service": {
-    desc: "Telecom disputes may involve service interruption or unfair billing.",
-    laws: ["Telecom Regulatory Authority of India Act", "Consumer Protection Act 2019"],
-    cases: [
-      "Vodafone Idea Ltd. v. Union of India",
-      "BSNL v. TRAI"
-    ],
-    advocates: ["Adv. Priya Sen", "Adv. Arjun Malhotra"]
-  }
+    document.getElementById("queryDesc").innerText =
+      "Showing top relevant Supreme Court cases.";
 
-};
+    // LAW SECTION EXTRACTION
+    const lawSet = new Set();
+    filtered.forEach(c => c.law.forEach(l => lawSet.add(l)));
 
-const result = data[query] || {
-  desc: "No structured data available. Please consult an advocate.",
-  laws: ["Consult a qualified legal professional"],
-  cases: ["Case data unavailable"],
-  advocates: ["Advocate suggestion pending"]
-};
+    const lawDiv = document.getElementById("lawSections");
+    [...lawSet].slice(0,6).forEach(law => {
+      const el = document.createElement("div");
+      el.innerHTML = `<div class="tag">${law}</div>`;
+      lawDiv.appendChild(el);
+    });
 
-document.getElementById("queryTitle").innerText = query.charAt(0).toUpperCase() + query.slice(1);
-document.getElementById("queryDesc").innerText = result.desc;
+    // CASES DISPLAY
+    const caseDiv = document.getElementById("casesContainer");
+    filtered.slice(0,6).forEach(c => {
+      const el = document.createElement("div");
+      el.className = "case";
+      el.innerHTML = `
+        <h4>${c.title}</h4>
+        <div class="meta">${c.summary.substring(0,300)}...</div>
+        <button class="small-btn" onclick="window.open('${c.reference}','_blank')">
+          View Full Judgment
+        </button>
+      `;
+      caseDiv.appendChild(el);
+    });
 
-const lawDiv = document.getElementById("lawSections");
-result.laws.forEach(law => {
-  const el = document.createElement("div");
-  el.innerHTML = `<div class="case">${law} <div class="tag">Section</div></div>`;
-  lawDiv.appendChild(el);
-});
+    // LIABILITY NOTES
+    const liabilityDiv = document.getElementById("liabilityContainer");
+    filtered[0].liability_notes.forEach(note => {
+      const el = document.createElement("div");
+      el.className = "meta";
+      el.innerHTML = "• " + note;
+      liabilityDiv.appendChild(el);
+    });
 
-const caseDiv = document.getElementById("cases");
-result.cases.forEach(c => {
-  const el = document.createElement("div");
-  el.className = "case";
-  el.innerText = c;
-  el.onclick = () => alert("Full case view coming soon.");
-  caseDiv.appendChild(el);
-});
+  });
 
-const advDiv = document.getElementById("advocates");
-result.advocates.forEach(a => {
-  const el = document.createElement("div");
-  el.className = "adv";
-  el.innerText = a;
-  el.onclick = () => alert("Advocate contact feature coming soon.");
-  advDiv.appendChild(el);
-});
 </script>
 
 </body>
