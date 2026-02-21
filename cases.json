@@ -1,42 +1,1288 @@
-[
+
   {
     "id": 1,
-    "title": "State vs. R. Kumar — Cyber Harassment",
-    "tags": ["cyber","abuse","harassment"],
-    "section": "IT Act — Cyber Harassment provisions (example)",
-    "summary": "Abusive messages and persistent threats via social media and messaging platforms.",
-    "date": "2025-03-12",
-    "advocate": { "name": "Adv. Nisha Rao", "email": "nisha.rao@example.com" },
-    "consent": "permitted"
+    "title": "Shreya Singhal v. Union of India (2015)",
+    "summary": "The Supreme Court struck down Section 66A of the IT Act as unconstitutional. The provision criminalized online speech using vague terms such as 'offensive' or 'annoying'. The Court held that such wording violated Article 19(1)(a) guaranteeing freedom of speech. It clarified the distinction between discussion, advocacy and incitement. Only speech that incites violence or public disorder can be restricted. This judgment strengthened digital free speech protections in India.",
+    "law": ["IT Act Section 66A", "Article 19(1)(a)", "Article 19(2)"],
+    "liability_notes": [
+      "Mere criticism online is not punishable.",
+      "Incitement to violence remains illegal.",
+      "Hate speech provisions still apply."
+    ],
+    "approach": "High Court under Article 226 or Supreme Court under Article 32.",
+    "helpline": "Cyber Crime Portal: https://cybercrime.gov.in | Helpline: 1930",
+    "reference": "https://indiankanoon.org/search/?formInput=Shreya+Singhal+v.+Union+of+India"
   },
   {
     "id": 2,
-    "title": "A vs B — Social Media Defamation",
-    "tags": ["defamation","social"],
-    "section": "Section 499/500 IPC",
-    "summary": "False posts that damaged reputation; criminal & civil remedies pursued.",
-    "date": "2025-04-22",
-    "advocate": { "name": "Adv. Karan Mehta", "email": "karan.mehta@example.com" },
-    "consent": "permitted"
+    "title": "Subramanian Swamy v. Union of India (2016)",
+    "summary": "The Supreme Court upheld the constitutionality of criminal defamation under IPC Sections 499 and 500. The petitioners argued that criminal defamation violates free speech. The Court ruled that the right to reputation is part of Article 21. Reasonable restrictions under Article 19(2) allow protection of dignity and reputation. The judgment balanced free speech with personal reputation rights.",
+    "law": ["IPC Sections 499, 500", "Article 19(2)", "Article 21"],
+    "liability_notes": [
+      "Truth for public good is a defense.",
+      "Honest opinion is protected.",
+      "False allegations may attract criminal liability."
+    ],
+    "approach": "Complaint before Magistrate Court under Section 200 CrPC.",
+    "helpline": "National Legal Services Authority: 15100",
+    "reference": "https://indiankanoon.org/search/?formInput=Subramanian+Swamy+v.+Union+of+India+2016"
   },
   {
     "id": 3,
-    "title": "XYZ Corp vs User — Data Breach Claim",
-    "tags": ["privacy","data","breach"],
-    "section": "IT Act — Data protection clauses (example)",
-    "summary": "Unauthorized disclosure of personal data by an employee leading to claim.",
-    "date": "2024-11-09",
-    "advocate": { "name": "Adv. Priya Sen", "email": "priya.sen@example.com" },
-    "consent": "permitted"
+    "title": "Jacob Mathew v. State of Punjab (2005)",
+    "summary": "This case defined standards for criminal medical negligence. The Supreme Court held that doctors cannot be prosecuted for every medical error. Criminal liability requires gross negligence. The Court adopted the Bolam Test to evaluate professional conduct. Mere difference in medical opinion does not amount to negligence. The judgment protects medical professionals from frivolous litigation.",
+    "law": ["IPC Section 304A", "Medical Negligence Principles"],
+    "liability_notes": [
+      "Simple error of judgment is not negligence.",
+      "Gross negligence required for criminal liability.",
+      "Expert evidence often necessary."
+    ],
+    "approach": "Consumer Commission for compensation; Criminal Court for prosecution.",
+    "helpline": "State Medical Council Complaint Cell",
+    "reference": "https://indiankanoon.org/search/?formInput=Jacob+Mathew+v.+State+of+Punjab"
   },
   {
     "id": 4,
-    "title": "Online Stalking Complaint — R v S",
-    "tags": ["cyber","stalking"],
-    "section": "Section 509 IPC; relevant IT Act clauses",
-    "summary": "Repeated unwanted contact through multiple online venues; restraining order obtained.",
-    "date": "2025-06-30",
-    "advocate": { "name": "Adv. Nisha Rao", "email": "nisha.rao@example.com" },
-    "consent": "permitted"
+    "title": "Indian Medical Association v. V.P. Shantha (1995)",
+    "summary": "The Supreme Court held that medical services fall under the Consumer Protection Act. Patients can sue private hospitals for deficiency in service. Free services in government hospitals may be excluded in certain circumstances. This decision expanded consumer rights in medical disputes. It made hospitals accountable for negligence and malpractice.",
+    "law": ["Consumer Protection Act"],
+    "liability_notes": [
+      "Paid medical services qualify as consumer service.",
+      "Proof of negligence required.",
+      "Free services may not fall under CPA."
+    ],
+    "approach": "District Consumer Commission.",
+    "helpline": "National Consumer Helpline: 1915",
+    "reference": "https://indiankanoon.org/search/?formInput=Indian+Medical+Association+v.+VP+Shantha"
+  },
+  {
+    "id": 5,
+    "title": "Maneka Gandhi v. Union of India (1978)",
+    "summary": "This landmark case expanded the interpretation of Article 21. The Court ruled that procedure established by law must be fair, just and reasonable. Arbitrary state action affecting liberty can be challenged. The right to travel abroad was recognized as part of personal liberty. The judgment strengthened due process in India.",
+    "law": ["Article 21", "Article 14"],
+    "liability_notes": [
+      "Government action must follow due process.",
+      "Arbitrary restrictions can be challenged."
+    ],
+    "approach": "Writ Petition before High Court or Supreme Court.",
+    "helpline": "NALSA Legal Aid: 15100",
+    "reference": "https://indiankanoon.org/search/?formInput=Maneka+Gandhi+v.+Union+of+India"
+  },
+  {
+    "id": 6,
+    "title": "K.S. Puttaswamy v. Union of India (2017)",
+    "summary": "The Supreme Court recognized privacy as a fundamental right under Article 21. The ruling impacted data protection and digital surveillance laws. It established that privacy includes informational, bodily and decisional autonomy. The judgment laid the foundation for data protection reforms in India.",
+    "law": ["Article 21", "Right to Privacy"],
+    "liability_notes": [
+      "Unauthorized data collection may violate privacy.",
+      "State surveillance must satisfy legality test."
+    ],
+    "approach": "High Court or Supreme Court through writ petition.",
+    "helpline": "Cyber Crime Portal: https://cybercrime.gov.in",
+    "reference": "https://indiankanoon.org/search/?formInput=K.S.+Puttaswamy+v.+Union+of+India"
+  },
+  {
+    "id": 7,
+    "title": "Olga Tellis v. Bombay Municipal Corporation (1985)",
+    "summary": "The Supreme Court held that right to livelihood is part of Article 21. Pavement dwellers cannot be evicted without due process. The State must follow fair procedure before demolition or eviction. This case recognized socio-economic rights within fundamental rights framework.",
+    "law": ["Article 21"],
+    "liability_notes": [
+      "Eviction requires notice and fair hearing.",
+      "Rehabilitation considerations may apply."
+    ],
+    "approach": "High Court under Article 226.",
+    "helpline": "Legal Services Authority: 15100",
+    "reference": "https://indiankanoon.org/search/?formInput=Olga+Tellis+v.+Bombay+Municipal+Corporation"
+  },
+  {
+    "id": 8,
+    "title": "V. Kishan Rao v. Nikhil Super Speciality Hospital (2010)",
+    "summary": "The Supreme Court held that expert evidence is not mandatory in every medical negligence case. Documentary evidence may suffice in clear cases. The hospital failed to treat malaria properly, resulting in death. Compensation was restored to the complainant.",
+    "law": ["Consumer Protection Act", "Medical Negligence"],
+    "liability_notes": [
+      "Expert evidence not mandatory in simple negligence cases.",
+      "Clear medical records can establish liability."
+    ],
+    "approach": "Consumer Commission.",
+    "helpline": "National Consumer Helpline: 1915",
+    "reference": "https://indiankanoon.org/search/?formInput=V.+Kishan+Rao+v.+Nikhil+Super+Speciality+Hospital"
+  },
+  {
+    "id": 9,
+    "title": "Shah Bano Case (Mohd. Ahmed Khan v. Shah Bano Begum, 1985)",
+    "summary": "The Supreme Court ruled that a divorced Muslim woman is entitled to maintenance under Section 125 CrPC. The judgment affirmed that secular criminal law applies irrespective of religion. It triggered legislative changes but remains a landmark for women’s rights.",
+    "law": ["Section 125 CrPC"],
+    "liability_notes": [
+      "Maintenance claimable if wife unable to maintain herself.",
+      "Applicable across religions under CrPC."
+    ],
+    "approach": "Family Court or Magistrate Court.",
+    "helpline": "Women Helpline: 181",
+    "reference": "https://indiankanoon.org/search/?formInput=Shah+Bano+case"
+  },
+  {
+    "id": 10,
+    "title": "Shatrughan Chauhan v. Union of India (2014)",
+    "summary": "The Supreme Court held that undue delay in executing death penalty can justify commutation. Mental illness and prolonged mercy petition delay are mitigating factors. The judgment reinforced human rights protections even for death row prisoners.",
+    "law": ["Article 21", "IPC 302"],
+    "liability_notes": [
+      "Mercy petition delay can reduce sentence.",
+      "Mental illness must be considered."
+    ],
+    "approach": "Supreme Court review petition.",
+    "helpline": "NALSA: 15100",
+    "reference": "https://indiankanoon.org/search/?formInput=Shatrughan+Chauhan+v.+Union+of+India"
   }
-]
+,
+{
+  "id": 11,
+  "title": "Arnesh Kumar v. State of Bihar (2014)",
+  "summary": "The Supreme Court issued guidelines to prevent automatic arrests under Section 498A IPC. The Court observed misuse of anti-dowry provisions and held that arrest should not be routine. Police must satisfy conditions under Section 41 CrPC before arresting. Magistrates must verify necessity of detention. The judgment protects personal liberty while preserving protection for genuine victims.",
+  "law": ["IPC Section 498A", "CrPC Section 41"],
+  "liability_notes": [
+    "Automatic arrest is illegal without justification.",
+    "Police must record reasons for arrest.",
+    "False complaints may attract counter action."
+  ],
+  "approach": "High Court for quashing under Section 482 CrPC.",
+  "helpline": "Women Helpline: 181 | Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Arnesh+Kumar+v.+State+of+Bihar"
+},
+{
+  "id": 12,
+  "title": "Lalita Kumari v. Government of Uttar Pradesh (2013)",
+  "summary": "The Supreme Court held that registration of FIR is mandatory if information discloses a cognizable offence. Preliminary inquiry is allowed only in limited categories. Police cannot refuse to register FIR arbitrarily. This case strengthened access to criminal justice and accountability of police authorities.",
+  "law": ["CrPC Section 154"],
+  "liability_notes": [
+    "FIR must be registered for cognizable offences.",
+    "Failure to register can be challenged.",
+    "Preliminary inquiry allowed in limited cases."
+  ],
+  "approach": "File complaint before Superintendent of Police or approach High Court.",
+  "helpline": "Police Emergency: 100",
+  "reference": "https://indiankanoon.org/search/?formInput=Lalita+Kumari+v.+Government+of+Uttar+Pradesh"
+},
+{
+  "id": 13,
+  "title": "MC Mehta v. Union of India (Oleum Gas Leak Case, 1987)",
+  "summary": "The Supreme Court introduced the doctrine of absolute liability for hazardous industries. Following a gas leak incident in Delhi, the Court held that enterprises engaged in hazardous activities are absolutely liable for damages. No exceptions such as act of God are allowed. This strengthened environmental accountability.",
+  "law": ["Environmental Law Principles", "Absolute Liability Doctrine"],
+  "liability_notes": [
+    "Hazardous industries are strictly liable.",
+    "No defense of reasonable care allowed.",
+    "Compensation must be proportional to capacity."
+  ],
+  "approach": "National Green Tribunal or Supreme Court.",
+  "helpline": "Pollution Control Board Complaint Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=MC+Mehta+v.+Union+of+India+Oleum"
+},
+{
+  "id": 14,
+  "title": "Bachan Singh v. State of Punjab (1980)",
+  "summary": "The Supreme Court upheld the constitutionality of the death penalty but restricted it to the 'rarest of rare' cases. The judgment requires balancing aggravating and mitigating factors before awarding capital punishment. It remains the guiding principle in death sentence cases.",
+  "law": ["IPC Section 302"],
+  "liability_notes": [
+    "Death penalty only in rarest of rare cases.",
+    "Mitigating factors must be considered."
+  ],
+  "approach": "Appeal before High Court and Supreme Court.",
+  "helpline": "Legal Aid Services: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Bachan+Singh+v.+State+of+Punjab"
+},
+{
+  "id": 15,
+  "title": "State of Rajasthan v. Vishaka (1997)",
+  "summary": "The Supreme Court laid down guidelines to prevent sexual harassment at the workplace. The Vishaka Guidelines became the foundation for the POSH Act 2013. Employers must establish internal complaints committees. The case expanded workplace safety protections for women.",
+  "law": ["Article 14", "Article 21", "POSH Act 2013"],
+  "liability_notes": [
+    "Companies must form Internal Complaints Committee.",
+    "Failure to comply may attract penalties."
+  ],
+  "approach": "Internal Complaints Committee or Labour Court.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=Vishaka+v.+State+of+Rajasthan"
+},
+{
+  "id": 16,
+  "title": "Rajesh Kumar v. State of U.P. (2017)",
+  "summary": "The Supreme Court issued directions to prevent misuse of Section 498A IPC. It initially mandated family welfare committees before arrest. Though later modified, the case highlighted the need for balance between protection and misuse concerns.",
+  "law": ["IPC Section 498A"],
+  "liability_notes": [
+    "Misuse of dowry laws scrutinized.",
+    "Arrests must follow procedural safeguards."
+  ],
+  "approach": "High Court for anticipatory bail.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Rajesh+Kumar+v.+State+of+UP+498A"
+},
+{
+  "id": 17,
+  "title": "Mohd. Shahabuddin v. State of Bihar (2010)",
+  "summary": "The Supreme Court emphasized speedy trial as part of Article 21. The Court held that prolonged detention without trial violates fundamental rights. The decision reinforced the importance of expeditious criminal proceedings.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "Delay in trial may violate rights.",
+    "Bail can be granted in prolonged detention."
+  ],
+  "approach": "High Court under Article 226.",
+  "helpline": "Legal Services Authority: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Speedy+trial+Article+21+Supreme+Court"
+},
+{
+  "id": 18,
+  "title": "HDFC Bank Ltd. v. Kumari Reshma (Cheque Bounce Case)",
+  "summary": "The Court reiterated that presumption under Section 139 NI Act favors the holder of cheque. The accused must rebut presumption with credible evidence. Mere denial is insufficient. This case strengthened cheque dishonour enforcement.",
+  "law": ["Negotiable Instruments Act Section 138", "Section 139"],
+  "liability_notes": [
+    "Presumption of debt exists.",
+    "Accused must prove absence of liability."
+  ],
+  "approach": "Magistrate Court under NI Act.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=HDFC+Bank+cheque+bounce+Section+138"
+},
+{
+  "id": 19,
+  "title": "LIC of India v. Consumer Education & Research Centre (1995)",
+  "summary": "The Supreme Court recognized health and medical care as part of the right to life. The Court directed insurance companies to provide fair medical coverage. The judgment strengthened consumer protection in insurance disputes.",
+  "law": ["Consumer Protection Act", "Article 21"],
+  "liability_notes": [
+    "Insurance denial must be justified.",
+    "Unfair contract clauses challengeable."
+  ],
+  "approach": "Consumer Commission.",
+  "helpline": "Insurance Ombudsman Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=LIC+v.+Consumer+Education+Research+Centre"
+},
+{
+  "id": 20,
+  "title": "BSNL v. TRAI (2013)",
+  "summary": "This case involved regulatory disputes between telecom operators and TRAI. The Court clarified powers of TRAI in tariff regulation. It reinforced regulatory oversight in telecom sector.",
+  "law": ["TRAI Act"],
+  "liability_notes": [
+    "Service providers must comply with TRAI regulations.",
+    "Billing disputes can be challenged."
+  ],
+  "approach": "Telecom Disputes Settlement and Appellate Tribunal (TDSAT).",
+  "helpline": "Telecom Complaint: 198",
+  "reference": "https://indiankanoon.org/search/?formInput=BSNL+v.+TRAI"
+},
+{
+  "id": 21,
+  "title": "Kailash Nath Associates v. DDA (2015)",
+  "summary": "The Supreme Court held that forfeiture of earnest money requires proof of loss. Compensation cannot be arbitrary. Section 74 of Contract Act governs penalty clauses.",
+  "law": ["Indian Contract Act Section 74"],
+  "liability_notes": [
+    "Penalty clauses must be reasonable.",
+    "Actual loss must be shown."
+  ],
+  "approach": "Civil Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Kailash+Nath+Associates+v.+DDA"
+},
+{
+  "id": 22,
+  "title": "Union of India v. Mohd. Ramzan Khan (1991)",
+  "summary": "The Court ruled that delinquent employees must be given opportunity to respond to inquiry reports. Natural justice principles were emphasized in disciplinary proceedings.",
+  "law": ["Principles of Natural Justice"],
+  "liability_notes": [
+    "Failure to provide inquiry report invalidates dismissal."
+  ],
+  "approach": "High Court under Article 226.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Union+of+India+v.+Mohd.+Ramzan+Khan"
+},
+{
+  "id": 23,
+  "title": "Nirbhaya Case (Mukesh v. State NCT Delhi, 2017)",
+  "summary": "The Supreme Court upheld death penalty for gang rape and murder. The judgment emphasized victim dignity and deterrence. It reaffirmed rarest of rare doctrine.",
+  "law": ["IPC Sections 302, 376"],
+  "liability_notes": [
+    "Aggravated rape punishable with severe penalties.",
+    "Victim compensation schemes applicable."
+  ],
+  "approach": "Sessions Court / High Court.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=Mukesh+v.+State+NCT+Delhi+Nirbhaya"
+},
+{
+  "id": 24,
+  "title": "Gian Kaur v. State of Punjab (1996)",
+  "summary": "The Supreme Court held that right to die is not a fundamental right. Assisted suicide remains punishable. The judgment clarified scope of Article 21.",
+  "law": ["IPC Section 309", "Article 21"],
+  "liability_notes": [
+    "Attempt to suicide previously punishable.",
+    "Later amendments decriminalized attempt under certain conditions."
+  ],
+  "approach": "High Court.",
+  "helpline": "Mental Health Helpline: 14416",
+  "reference": "https://indiankanoon.org/search/?formInput=Gian+Kaur+v.+State+of+Punjab"
+},
+{
+  "id": 25,
+  "title": "Swami Achyutanand Tirth v. Union of India (Milk Adulteration Case, 2016)",
+  "summary": "The Supreme Court addressed nationwide milk adulteration concerns. It directed strict enforcement of Food Safety laws. The case highlighted public health risks due to synthetic milk.",
+  "law": ["Food Safety and Standards Act 2006"],
+  "liability_notes": [
+    "Adulteration punishable with imprisonment.",
+    "Food business operators must obtain license."
+  ],
+  "approach": "Food Safety Officer or High Court.",
+  "helpline": "FSSAI Helpline: 1800-112-100",
+  "reference": "https://indiankanoon.org/search/?formInput=Swami+Achyutanand+Tirth+v.+Union+of+India"
+}
+,
+{
+  "id": 26,
+  "title": "Mohit Minerals Pvt. Ltd. v. Union of India (2022)",
+  "summary": "The Supreme Court examined the validity of Integrated GST on ocean freight under reverse charge mechanism. The Court held that GST Council recommendations are not binding but have persuasive value. It ruled that levy of IGST on ocean freight in CIF contracts was unconstitutional. This judgment clarified federal tax powers and GST structure.",
+  "law": ["CGST Act 2017", "IGST Act"],
+  "liability_notes": [
+    "Double taxation under GST can be challenged.",
+    "GST Council recommendations are persuasive, not binding."
+  ],
+  "approach": "High Court under Article 226 or Supreme Court.",
+  "helpline": "GST Portal: https://www.gst.gov.in",
+  "reference": "https://indiankanoon.org/search/?formInput=Mohit+Minerals+Pvt+Ltd+v+Union+of+India"
+},
+{
+  "id": 27,
+  "title": "Vodafone International Holdings v. Union of India (2012)",
+  "summary": "This case dealt with taxation of offshore share transfers involving Indian assets. The Supreme Court ruled in favor of Vodafone, holding that indirect transfer of shares was not taxable under existing law. The case led to retrospective amendment in Income Tax Act.",
+  "law": ["Income Tax Act"],
+  "liability_notes": [
+    "Tax liability depends on legislative clarity.",
+    "Retrospective taxation can be legally challenged."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "Income Tax e-Filing Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Vodafone+International+Holdings+v+Union+of+India"
+},
+{
+  "id": 28,
+  "title": "Kishan Rao v. Nikhil Super Speciality Hospital (2010)",
+  "summary": "The Supreme Court ruled that medical negligence cases in consumer forums do not always require expert evidence. Clear documentary proof may suffice. The Court restored compensation to the victim's family. This case simplified medical negligence litigation.",
+  "law": ["Consumer Protection Act"],
+  "liability_notes": [
+    "Expert opinion not mandatory in obvious negligence cases.",
+    "Hospital records can establish liability."
+  ],
+  "approach": "Consumer Commission.",
+  "helpline": "National Consumer Helpline: 1915",
+  "reference": "https://indiankanoon.org/search/?formInput=Kishan+Rao+v+Nikhil+Hospital"
+},
+{
+  "id": 29,
+  "title": "National Insurance Co. Ltd. v. Swaran Singh (2004)",
+  "summary": "The Supreme Court clarified liability of insurance companies in motor accident claims. It held that insurer cannot avoid liability unless breach of policy conditions is fundamental. Even if driver lacked license, insurer may still pay third party compensation.",
+  "law": ["Motor Vehicles Act"],
+  "liability_notes": [
+    "Insurance companies must compensate third parties.",
+    "Policy breach must be proven."
+  ],
+  "approach": "Motor Accident Claims Tribunal (MACT).",
+  "helpline": "Road Accident Helpline: 1073",
+  "reference": "https://indiankanoon.org/search/?formInput=National+Insurance+Co+v+Swaran+Singh"
+},
+{
+  "id": 30,
+  "title": "Sarla Verma v. Delhi Transport Corporation (2009)",
+  "summary": "The Supreme Court laid down structured formula for calculating compensation in motor accident cases. It standardized multiplier method and dependency calculation. The judgment reduced inconsistencies in compensation awards.",
+  "law": ["Motor Vehicles Act"],
+  "liability_notes": [
+    "Compensation depends on age and income.",
+    "Multiplier method applies."
+  ],
+  "approach": "Motor Accident Claims Tribunal.",
+  "helpline": "Road Accident Helpline: 1073",
+  "reference": "https://indiankanoon.org/search/?formInput=Sarla+Verma+v+Delhi+Transport+Corporation"
+},
+{
+  "id": 31,
+  "title": "Kartar Singh v. State of Punjab (1994)",
+  "summary": "The Supreme Court examined validity of TADA provisions. It upheld certain provisions but emphasized safeguards against misuse. The case stressed procedural fairness in anti-terror laws.",
+  "law": ["TADA Act"],
+  "liability_notes": [
+    "Anti-terror laws must follow due process.",
+    "Confessions require scrutiny."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Kartar+Singh+v+State+of+Punjab"
+},
+{
+  "id": 32,
+  "title": "M.C. Mehta v. Kamal Nath (1997)",
+  "summary": "The Court applied public trust doctrine to protect natural resources. It held that state holds natural resources in trust for public. Commercial exploitation violating environmental norms was restricted.",
+  "law": ["Environmental Law", "Public Trust Doctrine"],
+  "liability_notes": [
+    "Government must protect natural resources.",
+    "Environmental damage invites compensation."
+  ],
+  "approach": "National Green Tribunal.",
+  "helpline": "NGT Filing Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=MC+Mehta+v+Kamal+Nath"
+},
+{
+  "id": 33,
+  "title": "Pioneer Urban Land v. Govindan Raghavan (2019)",
+  "summary": "The Supreme Court held that one-sided builder agreements are unfair and voidable. Homebuyers can seek refund for delay in possession. The case strengthened consumer rights in real estate disputes.",
+  "law": ["Consumer Protection Act", "Real Estate Law"],
+  "liability_notes": [
+    "Unfair contract clauses are unenforceable.",
+    "Delay entitles refund."
+  ],
+  "approach": "Consumer Commission or RERA Authority.",
+  "helpline": "RERA Portal (State Specific)",
+  "reference": "https://indiankanoon.org/search/?formInput=Pioneer+Urban+Land+v+Govindan+Raghavan"
+},
+{
+  "id": 34,
+  "title": "ICICI Bank Ltd. v. Shanti Devi (Cheque Dishonour Case)",
+  "summary": "The Court reaffirmed presumption under Section 139 NI Act. Once cheque issuance is admitted, burden shifts to accused. Rebuttal requires credible evidence.",
+  "law": ["Negotiable Instruments Act Section 138"],
+  "liability_notes": [
+    "Presumption favors complainant.",
+    "Security cheque defense must be proven."
+  ],
+  "approach": "Magistrate Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=ICICI+Bank+v+Shanti+Devi+Section+138"
+},
+{
+  "id": 35,
+  "title": "Anuradha Bhasin v. Union of India (2020)",
+  "summary": "The Supreme Court ruled that internet access is protected under freedom of speech. Indefinite internet shutdowns are unconstitutional. Restrictions must be proportionate and reviewed periodically.",
+  "law": ["Article 19(1)(a)"],
+  "liability_notes": [
+    "Internet shutdown orders must be reasoned.",
+    "Proportionality test applies."
+  ],
+  "approach": "High Court under Article 226.",
+  "helpline": "Cyber Rights Organizations",
+  "reference": "https://indiankanoon.org/search/?formInput=Anuradha+Bhasin+v+Union+of+India"
+},
+{
+  "id": 36,
+  "title": "ArcelorMittal India Pvt Ltd v. Satish Kumar Gupta (2018)",
+  "summary": "The Supreme Court interpreted Section 29A of Insolvency and Bankruptcy Code. It barred defaulting promoters from bidding for stressed assets. The ruling strengthened insolvency resolution framework.",
+  "law": ["Insolvency and Bankruptcy Code"],
+  "liability_notes": [
+    "Ineligible promoters cannot regain control.",
+    "Strict compliance under IBC required."
+  ],
+  "approach": "NCLT or NCLAT.",
+  "helpline": "IBBI Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=ArcelorMittal+India+v+Satish+Kumar+Gupta"
+},
+{
+  "id": 37,
+  "title": "Gurmeet Singh v. State of Punjab (1996)",
+  "summary": "The Supreme Court held that victim testimony in rape cases does not require corroboration if credible. It emphasized sensitivity in sexual offence trials.",
+  "law": ["IPC Section 376"],
+  "liability_notes": [
+    "Victim testimony sufficient if trustworthy.",
+    "Courts must avoid stereotypes."
+  ],
+  "approach": "Sessions Court.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=Gurmeet+Singh+v+State+of+Punjab+rape"
+},
+{
+  "id": 38,
+  "title": "Karnataka Power Transmission Corp. v. Ashok Iron Works (2009)",
+  "summary": "The Court held that electricity boards are service providers under Consumer Protection Act. Consumers can challenge wrongful billing.",
+  "law": ["Consumer Protection Act"],
+  "liability_notes": [
+    "Utility services covered under CPA.",
+    "Wrong billing can be disputed."
+  ],
+  "approach": "Consumer Commission.",
+  "helpline": "Consumer Helpline: 1915",
+  "reference": "https://indiankanoon.org/search/?formInput=Karnataka+Power+Transmission+Corp+v+Ashok+Iron+Works"
+},
+{
+  "id": 39,
+  "title": "State of Haryana v. Bhajan Lal (1992)",
+  "summary": "The Supreme Court laid down categories where FIR can be quashed. It provided guidelines for exercising inherent powers under Section 482 CrPC.",
+  "law": ["CrPC Section 482"],
+  "liability_notes": [
+    "FIR can be quashed if no prima facie case.",
+    "Abuse of process can be prevented."
+  ],
+  "approach": "High Court under Section 482 CrPC.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=State+of+Haryana+v+Bhajan+Lal"
+},
+{
+  "id": 40,
+  "title": "People’s Union for Civil Liberties v. Union of India (Phone Tapping Case, 1997)",
+  "summary": "The Supreme Court laid down procedural safeguards against illegal phone tapping. It held that surveillance must follow strict legal procedure. Privacy protections were strengthened.",
+  "law": ["Indian Telegraph Act", "Article 21"],
+  "liability_notes": [
+    "Unauthorized surveillance illegal.",
+    "Government must record reasons."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "Cyber Crime Portal: https://cybercrime.gov.in",
+  "reference": "https://indiankanoon.org/search/?formInput=PUCL+v+Union+of+India+phone+tapping"
+}
+,
+{
+  "id": 41,
+  "title": "Common Cause v. Union of India (Passive Euthanasia, 2018)",
+  "summary": "The Supreme Court recognized the legality of passive euthanasia and living wills. It held that the right to die with dignity is part of Article 21. The judgment laid down strict safeguards and procedures for execution of advance directives. Medical boards must certify terminal condition before withdrawal of life support.",
+  "law": ["Article 21", "Medical Jurisprudence"],
+  "liability_notes": [
+    "Active euthanasia remains illegal.",
+    "Living wills must follow prescribed format.",
+    "Medical board approval mandatory."
+  ],
+  "approach": "High Court jurisdiction for disputes.",
+  "helpline": "Mental Health Helpline: 14416",
+  "reference": "https://indiankanoon.org/search/?formInput=Common+Cause+v+Union+of+India+euthanasia"
+},
+{
+  "id": 42,
+  "title": "Navtej Singh Johar v. Union of India (2018)",
+  "summary": "The Supreme Court decriminalized consensual same-sex relations by partially striking down Section 377 IPC. The Court held that sexual orientation is part of dignity and privacy. It affirmed equality and non-discrimination principles.",
+  "law": ["IPC Section 377", "Article 14", "Article 21"],
+  "liability_notes": [
+    "Consensual adult same-sex relations legal.",
+    "Non-consensual acts remain punishable."
+  ],
+  "approach": "High Court for rights violations.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Navtej+Singh+Johar+v+Union+of+India"
+},
+{
+  "id": 43,
+  "title": "NCLAT v. Union of India (2020)",
+  "summary": "The Supreme Court upheld the constitutional validity of Insolvency and Bankruptcy Code amendments. It strengthened creditor rights and insolvency resolution timelines.",
+  "law": ["Insolvency and Bankruptcy Code"],
+  "liability_notes": [
+    "Resolution must follow strict timelines.",
+    "Defaulting companies may face liquidation."
+  ],
+  "approach": "NCLT or NCLAT.",
+  "helpline": "IBBI Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=NCLAT+v+Union+of+India"
+},
+{
+  "id": 44,
+  "title": "K.S. Panduranga v. State of Karnataka (2013)",
+  "summary": "The Court held that appellate courts can decide criminal appeals even if counsel is absent. However, the court must ensure fairness and consider the record properly.",
+  "law": ["CrPC Appellate Procedure"],
+  "liability_notes": [
+    "Right to fair hearing must be preserved.",
+    "Absence of counsel not automatic ground for reversal."
+  ],
+  "approach": "High Court appeal.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=KS+Panduranga+v+State+of+Karnataka"
+},
+{
+  "id": 45,
+  "title": "Nandini Satpathy v. P.L. Dani (1978)",
+  "summary": "The Supreme Court expanded protection against self-incrimination under Article 20(3). Accused persons cannot be compelled to answer incriminating questions during investigation.",
+  "law": ["Article 20(3)", "CrPC"],
+  "liability_notes": [
+    "Right to remain silent applies during police questioning.",
+    "Compelled confession invalid."
+  ],
+  "approach": "High Court under writ jurisdiction.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Nandini+Satpathy+v+PL+Dani"
+},
+{
+  "id": 46,
+  "title": "Golaknath v. State of Punjab (1967)",
+  "summary": "The Supreme Court held that Parliament cannot amend Fundamental Rights. Though later modified by Kesavananda Bharati case, it shaped constitutional jurisprudence.",
+  "law": ["Constitution of India"],
+  "liability_notes": [
+    "Fundamental rights protected against arbitrary amendments."
+  ],
+  "approach": "Supreme Court under Article 32.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Golaknath+v+State+of+Punjab"
+},
+{
+  "id": 47,
+  "title": "Sunil Batra v. Delhi Administration (1978)",
+  "summary": "The Court recognized prisoners' rights under Article 21. It ruled against custodial torture and inhuman prison conditions.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "Prisoners retain fundamental rights.",
+    "Custodial violence punishable."
+  ],
+  "approach": "High Court under Article 226.",
+  "helpline": "Human Rights Commission Complaint Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Sunil+Batra+v+Delhi+Administration"
+},
+{
+  "id": 48,
+  "title": "Rupa Ashok Hurra v. Ashok Hurra (2002)",
+  "summary": "The Supreme Court recognized curative petition as a remedy after review petition dismissal. It allowed limited reopening of final judgments in rare cases.",
+  "law": ["Supreme Court Procedure"],
+  "liability_notes": [
+    "Curative petition allowed only in rare cases.",
+    "Gross miscarriage of justice required."
+  ],
+  "approach": "Supreme Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Rupa+Ashok+Hurra+v+Ashok+Hurra"
+},
+{
+  "id": 49,
+  "title": "State of Punjab v. Baldev Singh (1999)",
+  "summary": "The Court ruled that accused must be informed of right to be searched before Magistrate under NDPS Act. Non-compliance invalidates search.",
+  "law": ["NDPS Act Section 50"],
+  "liability_notes": [
+    "Procedural safeguards mandatory in NDPS cases."
+  ],
+  "approach": "Sessions Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=State+of+Punjab+v+Baldev+Singh+NDPS"
+},
+{
+  "id": 50,
+  "title": "Hussainara Khatoon v. State of Bihar (1979)",
+  "summary": "The Supreme Court recognized speedy trial as a fundamental right. It addressed plight of undertrial prisoners languishing in jail.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "Unreasonable delay violates fundamental rights."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "Legal Services Authority: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Hussainara+Khatoon+v+State+of+Bihar"
+},
+{
+  "id": 51,
+  "title": "PUDR v. Union of India (1982)",
+  "summary": "The Court held that non-payment of minimum wages amounts to forced labor under Article 23. It expanded interpretation of labor rights.",
+  "law": ["Article 23"],
+  "liability_notes": [
+    "Minimum wage mandatory.",
+    "Violation punishable under labor laws."
+  ],
+  "approach": "Labour Court.",
+  "helpline": "Labour Helpline (State specific)",
+  "reference": "https://indiankanoon.org/search/?formInput=PUDR+v+Union+of+India"
+},
+{
+  "id": 52,
+  "title": "Bennett Coleman v. Union of India (1973)",
+  "summary": "The Court protected freedom of press against government restrictions on newsprint policy. It expanded Article 19 protections.",
+  "law": ["Article 19(1)(a)"],
+  "liability_notes": [
+    "Press freedom protected.",
+    "Reasonable restrictions allowed under Article 19(2)."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Bennett+Coleman+v+Union+of+India"
+},
+{
+  "id": 53,
+  "title": "Satyam Scam Case (SEBI v. Ramalinga Raju)",
+  "summary": "The case involved corporate fraud in Satyam Computers. It highlighted securities fraud and regulatory oversight under SEBI Act.",
+  "law": ["SEBI Act", "Companies Act"],
+  "liability_notes": [
+    "Corporate fraud punishable.",
+    "Investor protection laws apply."
+  ],
+  "approach": "Special CBI Court or SEBI Tribunal.",
+  "helpline": "SEBI SCORES Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Satyam+Scam+Ramalinga+Raju"
+},
+{
+  "id": 54,
+  "title": "RBI v. Peerless General Finance (1987)",
+  "summary": "The Court upheld RBI’s regulatory powers over financial institutions. It strengthened oversight of non-banking financial companies.",
+  "law": ["RBI Act"],
+  "liability_notes": [
+    "NBFCs must comply with RBI directions."
+  ],
+  "approach": "High Court.",
+  "helpline": "RBI Complaint Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=RBI+v+Peerless+General+Finance"
+},
+{
+  "id": 55,
+  "title": "Shiv Shakti Coop. Housing v. Swaraj Developers (2003)",
+  "summary": "The Court clarified amendment provisions under CPC. It allowed flexibility in civil pleadings where justice requires.",
+  "law": ["CPC Section 115"],
+  "liability_notes": [
+    "Amendments allowed to prevent injustice."
+  ],
+  "approach": "Civil Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Shiv+Shakti+Coop+Housing+v+Swaraj+Developers"
+},
+{
+  "id": 56,
+  "title": "Rakesh Kumar v. State of Haryana (2010)",
+  "summary": "The Supreme Court reiterated fair investigation principles. It held that biased or unfair investigation violates Article 21.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "Fair investigation mandatory."
+  ],
+  "approach": "High Court.",
+  "helpline": "Police Complaint Authority",
+  "reference": "https://indiankanoon.org/search/?formInput=Fair+investigation+Supreme+Court"
+},
+{
+  "id": 57,
+  "title": "Bharat Aluminium Co. v. Kaiser Aluminium (2012)",
+  "summary": "The Court clarified arbitration law regarding seat of arbitration. It limited application of Part I of Arbitration Act to domestic arbitrations.",
+  "law": ["Arbitration and Conciliation Act"],
+  "liability_notes": [
+    "Seat of arbitration determines jurisdiction."
+  ],
+  "approach": "High Court.",
+  "helpline": "Arbitration Centre (State specific)",
+  "reference": "https://indiankanoon.org/search/?formInput=Bharat+Aluminium+v+Kaiser+Aluminium"
+},
+{
+  "id": 58,
+  "title": "Gurbaksh Singh Sibbia v. State of Punjab (1980)",
+  "summary": "The Supreme Court laid down principles for anticipatory bail. It held that anticipatory bail protects personal liberty and should not be granted mechanically.",
+  "law": ["CrPC Section 438"],
+  "liability_notes": [
+    "Anticipatory bail discretionary.",
+    "Serious offences require stricter scrutiny."
+  ],
+  "approach": "High Court or Sessions Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Gurbaksh+Singh+Sibbia+v+State+of+Punjab"
+},
+{
+  "id": 59,
+  "title": "Delhi Development Authority v. Skipper Construction (1996)",
+  "summary": "The Court dealt with fraud in real estate transactions. It ordered attachment of properties and compensation to investors.",
+  "law": ["Contempt of Court", "Contract Law"],
+  "liability_notes": [
+    "Fraud vitiates contracts.",
+    "Courts can attach properties."
+  ],
+  "approach": "Civil Court.",
+  "helpline": "Consumer Helpline: 1915",
+  "reference": "https://indiankanoon.org/search/?formInput=DDA+v+Skipper+Construction"
+},
+{
+  "id": 60,
+  "title": "Subhash Kumar v. State of Bihar (1991)",
+  "summary": "The Court held that right to pollution-free water and air is part of Article 21. Environmental degradation can be challenged via PIL.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "Public interest litigation allowed.",
+    "Environmental harm actionable."
+  ],
+  "approach": "High Court or NGT.",
+  "helpline": "Pollution Control Board Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Subhash+Kumar+v+State+of+Bihar"
+}
+,
+{
+  "id": 61,
+  "title": "Indra Sawhney v. Union of India (1992)",
+  "summary": "Popularly known as the Mandal Commission case, the Supreme Court upheld reservation for Other Backward Classes under Article 16(4). It capped total reservations at 50% and introduced the concept of the creamy layer. The judgment shaped affirmative action jurisprudence in India.",
+  "law": ["Article 16(4)", "Constitution of India"],
+  "liability_notes": [
+    "Reservations subject to 50% ceiling (with exceptions).",
+    "Creamy layer exclusion applies."
+  ],
+  "approach": "High Court or Supreme Court under writ jurisdiction.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Indra+Sawhney+v+Union+of+India"
+},
+{
+  "id": 62,
+  "title": "R. Rajagopal v. State of Tamil Nadu (1994)",
+  "summary": "Also known as the Auto Shankar case, the Supreme Court recognized the right to privacy in relation to publication of personal information. It held that unauthorized publication of life stories without consent can violate privacy rights.",
+  "law": ["Article 21", "Right to Privacy"],
+  "liability_notes": [
+    "Press cannot publish private details without consent.",
+    "Public records may be reported lawfully."
+  ],
+  "approach": "Civil Court for damages or High Court under writ.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=R+Rajagopal+v+State+of+Tamil+Nadu"
+},
+{
+  "id": 63,
+  "title": "Arun Ghosh v. State of West Bengal (1970)",
+  "summary": "The Supreme Court distinguished between 'law and order' and 'public order'. Preventive detention must relate to disturbance of public order, not mere breach of law.",
+  "law": ["Preventive Detention Laws"],
+  "liability_notes": [
+    "Detention must impact public order.",
+    "Mere breach of law insufficient."
+  ],
+  "approach": "High Court under habeas corpus.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Arun+Ghosh+v+State+of+West+Bengal"
+},
+{
+  "id": 64,
+  "title": "Ramesh Thappar v. State of Madras (1950)",
+  "summary": "One of the earliest free speech cases, the Court struck down restrictions on publication imposed by state authorities. It strengthened freedom of press under Article 19(1)(a).",
+  "law": ["Article 19(1)(a)"],
+  "liability_notes": [
+    "Press freedom protected.",
+    "Restrictions must fall under Article 19(2)."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Ramesh+Thappar+v+State+of+Madras"
+},
+{
+  "id": 65,
+  "title": "K.T. Plantation v. State of Karnataka (2011)",
+  "summary": "The Supreme Court examined the validity of property acquisition laws. It held that compensation must be just, fair, and reasonable under Article 300A.",
+  "law": ["Article 300A"],
+  "liability_notes": [
+    "State acquisition must provide compensation.",
+    "Arbitrary acquisition challengeable."
+  ],
+  "approach": "High Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=KT+Plantation+v+State+of+Karnataka"
+},
+{
+  "id": 66,
+  "title": "Sushil Kumar Sharma v. Union of India (2005)",
+  "summary": "The Supreme Court held that misuse of Section 498A IPC does not invalidate the law. However, false complaints may attract legal consequences.",
+  "law": ["IPC Section 498A"],
+  "liability_notes": [
+    "Misuse does not invalidate statute.",
+    "False complaints punishable."
+  ],
+  "approach": "High Court under Section 482 CrPC.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=Sushil+Kumar+Sharma+v+Union+of+India"
+},
+{
+  "id": 67,
+  "title": "Municipal Corporation of Delhi v. Uphaar Tragedy Victims (2011)",
+  "summary": "The Court awarded compensation to victims of the Uphaar cinema fire tragedy. It emphasized accountability of public authorities and safety compliance.",
+  "law": ["Tort Law", "Public Liability"],
+  "liability_notes": [
+    "Negligence by authorities actionable.",
+    "Compensation awarded to victims."
+  ],
+  "approach": "Civil Court or Supreme Court.",
+  "helpline": "Disaster Helpline: 1077",
+  "reference": "https://indiankanoon.org/search/?formInput=Uphaar+Tragedy+case"
+},
+{
+  "id": 68,
+  "title": "Sahara India Real Estate Corp v. SEBI (2012)",
+  "summary": "The Supreme Court directed Sahara to refund investors’ money collected through OFCDs. It strengthened SEBI’s regulatory authority.",
+  "law": ["SEBI Act"],
+  "liability_notes": [
+    "Unauthorized securities schemes illegal.",
+    "Investor refunds mandatory."
+  ],
+  "approach": "SEBI or Supreme Court.",
+  "helpline": "SEBI SCORES Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Sahara+India+Real+Estate+Corp+v+SEBI"
+},
+{
+  "id": 69,
+  "title": "R.D. Shetty v. International Airport Authority (1979)",
+  "summary": "The Court held that government contracts must follow Article 14 principles of fairness and non-arbitrariness.",
+  "law": ["Article 14"],
+  "liability_notes": [
+    "Government tenders must be transparent."
+  ],
+  "approach": "High Court under Article 226.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=RD+Shetty+v+International+Airport+Authority"
+},
+{
+  "id": 70,
+  "title": "P. Rathinam v. Union of India (1994)",
+  "summary": "The Court initially struck down Section 309 IPC (attempt to suicide), later overruled in Gian Kaur case. It contributed to debate on right to die.",
+  "law": ["IPC Section 309"],
+  "liability_notes": [
+    "Attempt to suicide decriminalized later under Mental Healthcare Act."
+  ],
+  "approach": "High Court.",
+  "helpline": "Mental Health Helpline: 14416",
+  "reference": "https://indiankanoon.org/search/?formInput=P+Rathinam+v+Union+of+India"
+},
+{
+  "id": 71,
+  "title": "State of Punjab v. Gurmit Singh (1996)",
+  "summary": "The Court emphasized sensitivity in rape trials and that in-camera proceedings should be preferred.",
+  "law": ["IPC Section 376"],
+  "liability_notes": [
+    "Victim identity protected.",
+    "In-camera trial preferred."
+  ],
+  "approach": "Sessions Court.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=State+of+Punjab+v+Gurmit+Singh"
+},
+{
+  "id": 72,
+  "title": "Bharat Petroleum Corp. Ltd. v. N.R. Vairamani (2004)",
+  "summary": "The Court clarified precedential value of judgments and cautioned against blind reliance without context.",
+  "law": ["Judicial Precedent Principles"],
+  "liability_notes": [
+    "Context matters in applying precedents."
+  ],
+  "approach": "High Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Bharat+Petroleum+v+NR+Vairamani"
+},
+{
+  "id": 73,
+  "title": "Shiv Kumar v. Hukam Chand (1999)",
+  "summary": "The Court held that prosecution must be conducted by public prosecutor and private counsel cannot override statutory framework.",
+  "law": ["CrPC Section 301"],
+  "liability_notes": [
+    "Prosecution conducted under CrPC framework."
+  ],
+  "approach": "High Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Shiv+Kumar+v+Hukam+Chand"
+},
+{
+  "id": 74,
+  "title": "Tukaram v. State of Maharashtra (Mathura Case, 1979)",
+  "summary": "The case led to major reforms in rape law in India. Though acquittal was controversial, it resulted in 1983 amendments strengthening rape laws.",
+  "law": ["IPC Section 376"],
+  "liability_notes": [
+    "Consent must be voluntary.",
+    "Custodial rape strictly punishable."
+  ],
+  "approach": "Sessions Court.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=Mathura+rape+case"
+},
+{
+  "id": 75,
+  "title": "S.R. Bommai v. Union of India (1994)",
+  "summary": "The Court restricted misuse of Article 356 (President’s Rule). It strengthened federalism and judicial review of executive actions.",
+  "law": ["Article 356"],
+  "liability_notes": [
+    "President’s Rule subject to judicial review."
+  ],
+  "approach": "Supreme Court.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=SR+Bommai+v+Union+of+India"
+},
+{
+  "id": 76,
+  "title": "Central Inland Water Transport Corp v. Brojo Nath (1986)",
+  "summary": "The Court struck down unconscionable contract clauses imposed by state entities. It protected employees from unfair termination terms.",
+  "law": ["Contract Law", "Article 14"],
+  "liability_notes": [
+    "Unfair contracts void.",
+    "Public corporations must act fairly."
+  ],
+  "approach": "High Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Central+Inland+Water+Transport+Corp+v+Brojo+Nath"
+},
+{
+  "id": 77,
+  "title": "Ratan Lal v. State of Punjab (1964)",
+  "summary": "The Court clarified interpretation of beneficial legislation and retrospective application of criminal law.",
+  "law": ["General Criminal Law"],
+  "liability_notes": [
+    "Beneficial statutes interpreted liberally."
+  ],
+  "approach": "High Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Ratan+Lal+v+State+of+Punjab"
+},
+{
+  "id": 78,
+  "title": "Mardia Chemicals Ltd. v. Union of India (2004)",
+  "summary": "The Supreme Court upheld SARFAESI Act but struck down certain provisions as unconstitutional. It balanced creditor rights with borrower protection.",
+  "law": ["SARFAESI Act"],
+  "liability_notes": [
+    "Banks can seize secured assets.",
+    "Borrowers can challenge illegal action."
+  ],
+  "approach": "Debt Recovery Tribunal.",
+  "helpline": "Banking Ombudsman Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Mardia+Chemicals+Ltd+v+Union+of+India"
+},
+{
+  "id": 79,
+  "title": "Union of India v. Assn. for Democratic Reforms (2002)",
+  "summary": "The Court mandated disclosure of criminal records and assets of election candidates. It strengthened electoral transparency.",
+  "law": ["Representation of People Act"],
+  "liability_notes": [
+    "Candidates must disclose criminal cases.",
+    "False disclosure punishable."
+  ],
+  "approach": "High Court.",
+  "helpline": "Election Commission Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Association+for+Democratic+Reforms+case"
+},
+{
+  "id": 80,
+  "title": "Pawan Kumar v. State of Haryana (1998)",
+  "summary": "The Court defined cruelty in dowry death cases and clarified evidentiary requirements under Section 304B IPC.",
+  "law": ["IPC Section 304B"],
+  "liability_notes": [
+    "Dowry death presumption applies if death within 7 years of marriage.",
+    "Cruelty must be linked to dowry demand."
+  ],
+  "approach": "Sessions Court.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=Pawan+Kumar+v+State+of+Haryana+dowry"
+}
+,
+{
+  "id": 81,
+  "title": "Kesavananda Bharati v. State of Kerala (1973)",
+  "summary": "This landmark judgment established the Basic Structure Doctrine of the Constitution. The Supreme Court held that Parliament cannot amend the basic structure of the Constitution even under Article 368. It preserved core principles like democracy, secularism and judicial review. The decision remains one of the most important constitutional rulings in India.",
+  "law": ["Article 368", "Basic Structure Doctrine"],
+  "liability_notes": [
+    "Constitutional amendments subject to judicial review.",
+    "Basic structure cannot be altered."
+  ],
+  "approach": "Supreme Court under Article 32.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Kesavananda+Bharati+v+State+of+Kerala"
+},
+{
+  "id": 82,
+  "title": "Minerva Mills v. Union of India (1980)",
+  "summary": "The Supreme Court reinforced the Basic Structure Doctrine. It held that harmony between Fundamental Rights and Directive Principles is part of the basic structure. Parliament’s amending power is limited.",
+  "law": ["Article 368", "Basic Structure"],
+  "liability_notes": [
+    "Unlimited amending power unconstitutional."
+  ],
+  "approach": "Supreme Court.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Minerva+Mills+v+Union+of+India"
+},
+{
+  "id": 83,
+  "title": "State of West Bengal v. Anwar Ali Sarkar (1952)",
+  "summary": "The Court struck down arbitrary classification under Article 14. It emphasized equality before law and reasonable classification doctrine.",
+  "law": ["Article 14"],
+  "liability_notes": [
+    "Arbitrary classification violates equality."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=State+of+West+Bengal+v+Anwar+Ali+Sarkar"
+},
+{
+  "id": 84,
+  "title": "State of Madras v. Champakam Dorairajan (1951)",
+  "summary": "The Supreme Court held that Fundamental Rights prevail over Directive Principles in case of conflict. The case led to the First Constitutional Amendment.",
+  "law": ["Article 15", "Article 29"],
+  "liability_notes": [
+    "Fundamental Rights enforceable against state."
+  ],
+  "approach": "High Court.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Champakam+Dorairajan+case"
+},
+{
+  "id": 85,
+  "title": "D.K. Basu v. State of West Bengal (1997)",
+  "summary": "The Court laid down guidelines to prevent custodial torture and illegal detention. Police must follow arrest procedures including informing relatives and preparing arrest memo. Violations can attract compensation.",
+  "law": ["Article 21", "CrPC"],
+  "liability_notes": [
+    "Arrest memo mandatory.",
+    "Custodial violence punishable."
+  ],
+  "approach": "High Court under Article 226.",
+  "helpline": "Police Helpline: 100 | Human Rights Commission",
+  "reference": "https://indiankanoon.org/search/?formInput=DK+Basu+v+State+of+West+Bengal"
+},
+{
+  "id": 86,
+  "title": "Zahira Habibullah Sheikh v. State of Gujarat (2004)",
+  "summary": "The Best Bakery case emphasized fair trial principles. The Court ordered retrial due to hostile witnesses and failure of justice. It strengthened witness protection jurisprudence.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "Fair trial essential.",
+    "Witness intimidation affects justice."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Zahira+Habibullah+Sheikh+case"
+},
+{
+  "id": 87,
+  "title": "Manohar Lal Sharma v. Principal Secretary (Coal Block Case, 2014)",
+  "summary": "The Supreme Court cancelled illegal coal block allocations citing arbitrariness and corruption. It reinforced transparency in allocation of natural resources.",
+  "law": ["Article 14"],
+  "liability_notes": [
+    "Arbitrary allocation unconstitutional."
+  ],
+  "approach": "Supreme Court.",
+  "helpline": "CBI Complaint Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Coal+Block+Allocation+case"
+},
+{
+  "id": 88,
+  "title": "Ajay Hasia v. Khalid Mujib (1981)",
+  "summary": "The Court expanded definition of 'State' under Article 12. It held that government-controlled societies can be treated as state authorities.",
+  "law": ["Article 12"],
+  "liability_notes": [
+    "Government-controlled bodies subject to Fundamental Rights."
+  ],
+  "approach": "High Court.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Ajay+Hasia+v+Khalid+Mujib"
+},
+{
+  "id": 89,
+  "title": "Tata Press Ltd. v. MTNL (1995)",
+  "summary": "The Supreme Court held that commercial speech is protected under Article 19(1)(a). Advertisements are part of freedom of speech, subject to reasonable restrictions.",
+  "law": ["Article 19(1)(a)"],
+  "liability_notes": [
+    "Misleading advertisements punishable.",
+    "Consumer protection laws apply."
+  ],
+  "approach": "High Court.",
+  "helpline": "Consumer Helpline: 1915",
+  "reference": "https://indiankanoon.org/search/?formInput=Tata+Press+Ltd+v+MTNL"
+},
+{
+  "id": 90,
+  "title": "Shayara Bano v. Union of India (2017)",
+  "summary": "The Supreme Court declared instant triple talaq unconstitutional. It strengthened women’s rights and gender equality under the Constitution.",
+  "law": ["Article 14", "Article 21"],
+  "liability_notes": [
+    "Instant triple talaq invalid.",
+    "Muslim Women (Protection of Rights) Act applies."
+  ],
+  "approach": "Family Court.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=Shayara+Bano+v+Union+of+India"
+},
+{
+  "id": 91,
+  "title": "Novartis AG v. Union of India (2013)",
+  "summary": "The Court rejected patent for a modified cancer drug citing lack of enhanced efficacy. It strengthened access to affordable medicines.",
+  "law": ["Patents Act Section 3(d)"],
+  "liability_notes": [
+    "Incremental innovation must show enhanced efficacy."
+  ],
+  "approach": "High Court.",
+  "helpline": "IP India Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Novartis+AG+v+Union+of+India"
+},
+{
+  "id": 92,
+  "title": "T.M.A. Pai Foundation v. State of Karnataka (2002)",
+  "summary": "The Court clarified rights of minority educational institutions under Article 30. It balanced regulatory control with autonomy.",
+  "law": ["Article 30"],
+  "liability_notes": [
+    "Minority institutions have autonomy.",
+    "Reasonable regulation allowed."
+  ],
+  "approach": "High Court.",
+  "helpline": "Education Department Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=TMA+Pai+Foundation+v+State+of+Karnataka"
+},
+{
+  "id": 93,
+  "title": "Sodan Singh v. NDMC (1989)",
+  "summary": "The Court recognized street vendors’ right to carry on trade under Article 19(1)(g), subject to reasonable restrictions.",
+  "law": ["Article 19(1)(g)"],
+  "liability_notes": [
+    "Right to trade subject to regulation."
+  ],
+  "approach": "High Court.",
+  "helpline": "Municipal Corporation Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Sodan+Singh+v+NDMC"
+},
+{
+  "id": 94,
+  "title": "Kharak Singh v. State of UP (1963)",
+  "summary": "The Court examined police surveillance and privacy rights. Though majority upheld certain surveillance practices, dissent recognized privacy principles later affirmed in Puttaswamy.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "Unlawful surveillance challengeable."
+  ],
+  "approach": "High Court.",
+  "helpline": "Cyber Crime Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Kharak+Singh+v+State+of+UP"
+},
+{
+  "id": 95,
+  "title": "State of Punjab v. Mohinder Singh Chawla (1997)",
+  "summary": "The Court held that right to health is integral to Article 21. Government must provide adequate medical facilities.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "State must ensure public healthcare."
+  ],
+  "approach": "High Court.",
+  "helpline": "Health Helpline: 14404",
+  "reference": "https://indiankanoon.org/search/?formInput=State+of+Punjab+v+Mohinder+Singh+Chawla"
+},
+{
+  "id": 96,
+  "title": "Vineet Narain v. Union of India (1998)",
+  "summary": "The Court strengthened independence of CBI and vigilance mechanisms in corruption cases. It laid down guidelines for transparent investigation.",
+  "law": ["Prevention of Corruption Act"],
+  "liability_notes": [
+    "CBI must act independently.",
+    "Corruption cases subject to monitoring."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "CBI Complaint Portal",
+  "reference": "https://indiankanoon.org/search/?formInput=Vineet+Narain+v+Union+of+India"
+},
+{
+  "id": 97,
+  "title": "State of Gujarat v. Mirzapur Moti Kureshi Kassab (2005)",
+  "summary": "The Court upheld ban on cow slaughter, balancing economic and religious considerations.",
+  "law": ["Article 48", "Article 19"],
+  "liability_notes": [
+    "State policy directives influence legislation."
+  ],
+  "approach": "High Court.",
+  "helpline": "Legal Aid: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=Mirzapur+Moti+Kureshi+Kassab+case"
+},
+{
+  "id": 98,
+  "title": "E.P. Royappa v. State of Tamil Nadu (1974)",
+  "summary": "The Court expanded concept of equality under Article 14 to include arbitrariness doctrine. Arbitrary state action violates equality.",
+  "law": ["Article 14"],
+  "liability_notes": [
+    "Arbitrary action unconstitutional."
+  ],
+  "approach": "High Court.",
+  "helpline": "NALSA: 15100",
+  "reference": "https://indiankanoon.org/search/?formInput=EP+Royappa+v+State+of+Tamil+Nadu"
+},
+{
+  "id": 99,
+  "title": "Githa Hariharan v. RBI (1999)",
+  "summary": "The Court held that mother can be natural guardian during father’s lifetime in certain circumstances. It promoted gender equality in guardianship laws.",
+  "law": ["Hindu Minority and Guardianship Act"],
+  "liability_notes": [
+    "Mother has equal guardianship rights."
+  ],
+  "approach": "Family Court.",
+  "helpline": "Women Helpline: 181",
+  "reference": "https://indiankanoon.org/search/?formInput=Githa+Hariharan+v+RBI"
+},
+{
+  "id": 100,
+  "title": "People’s Union for Civil Liberties v. Union of India (Right to Food Case, 2001)",
+  "summary": "The Supreme Court converted food security schemes into legal entitlements. It directed governments to implement mid-day meal and public distribution schemes effectively.",
+  "law": ["Article 21"],
+  "liability_notes": [
+    "Right to food part of right to life.",
+    "Government must implement welfare schemes."
+  ],
+  "approach": "High Court or Supreme Court.",
+  "helpline": "Food Security Helpline (State specific)",
+  "reference": "https://indiankanoon.org/search/?formInput=Right+to+Food+case+PUCL"
+}
