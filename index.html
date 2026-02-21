@@ -10,7 +10,6 @@
 <style>
 :root{
   --primary:#3D5628;
-  --primary-dark:#2F441F;
   --bg:#D9E7C7;
   --card:#EEF5E6;
   --text:#1E2A16;
@@ -18,7 +17,6 @@
   --border:#C7D8B6;
   --radius:18px;
 }
-
 *{box-sizing:border-box}
 body{
   margin:0;
@@ -26,12 +24,7 @@ body{
   background:var(--bg);
   color:var(--text);
 }
-
-.app{
-  max-width:1200px;
-  margin:auto;
-  padding:40px 20px;
-}
+.app{max-width:1200px;margin:auto;padding:40px 20px;}
 
 .navbar{
   display:flex;
@@ -41,11 +34,7 @@ body{
   background:var(--primary);
   color:white;
 }
-
-.navbar h2{
-  font-family:Playfair Display, serif;
-  cursor:pointer;
-}
+.navbar h2{font-family:Playfair Display, serif;cursor:pointer;}
 
 .nav-buttons button{
   background:white;
@@ -58,21 +47,9 @@ body{
   color:var(--primary);
 }
 
-.hero{
-  text-align:center;
-  padding:80px 20px 40px;
-}
-
-.hero h1{
-  font-size:52px;
-  font-family:Playfair Display, serif;
-}
-
-.hero p{
-  color:var(--muted);
-  margin-top:12px;
-  font-size:18px;
-}
+.hero{text-align:center;padding:80px 20px 40px;}
+.hero h1{font-size:52px;font-family:Playfair Display, serif;}
+.hero p{color:var(--muted);margin-top:12px;font-size:18px;}
 
 .search-container{
   display:flex;
@@ -83,125 +60,88 @@ body{
   overflow:hidden;
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
-
 .search-container input{
-  flex:1;
-  border:none;
-  padding:18px;
-  font-size:16px;
-  outline:none;
+  flex:1;border:none;padding:18px;font-size:16px;outline:none;
 }
-
 .search-container button{
-  background:var(--primary);
-  color:white;
-  border:none;
-  padding:0 30px;
-  font-weight:600;
-  cursor:pointer;
+  background:var(--primary);color:white;border:none;
+  padding:0 30px;font-weight:600;cursor:pointer;
 }
 
 .chips{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:20px;
+  display:flex;justify-content:center;
+  gap:12px;flex-wrap:wrap;margin-top:20px;
 }
-
 .chip{
   background:var(--card);
   border:1px solid var(--border);
-  padding:8px 18px;
-  border-radius:999px;
+  padding:8px 18px;border-radius:999px;
   cursor:pointer;
 }
 
-.chip:hover{
-  background:var(--primary);
-  color:white;
-}
-
-.results{
-  margin-top:60px;
-}
-
+.results{margin-top:60px;}
 .card{
   background:var(--card);
-  padding:24px;
-  border-radius:var(--radius);
+  padding:24px;border-radius:var(--radius);
   box-shadow:0 6px 20px rgba(0,0,0,0.05);
 }
 
-.case{
-  border-bottom:1px solid var(--border);
-  padding:16px 0;
-}
-
-.case:last-child{
-  border-bottom:none;
-}
-
-.meta{
-  font-size:14px;
-  color:var(--muted);
-  margin-top:8px;
-}
+.case{border-bottom:1px solid var(--border);padding:16px 0;}
+.case:last-child{border-bottom:none;}
+.meta{font-size:14px;color:var(--muted);margin-top:8px;}
 
 .small-btn{
   background:var(--primary);
-  color:white;
-  border:none;
-  padding:6px 12px;
-  border-radius:999px;
-  cursor:pointer;
-  font-size:13px;
+  color:white;border:none;
+  padding:6px 12px;border-radius:999px;
+  cursor:pointer;font-size:13px;
+  margin-top:8px;
 }
 
 .disclaimer{
   background:#f3f8ec;
-  padding:20px;
-  border-radius:var(--radius);
-  margin-top:50px;
-  font-size:14px;
-  color:var(--muted);
-  border:1px solid var(--border);
+  padding:20px;border-radius:var(--radius);
+  margin-top:50px;font-size:14px;
+  color:var(--muted);border:1px solid var(--border);
 }
 
 footer{
-  margin-top:40px;
-  padding:30px;
-  text-align:center;
-  background:var(--primary);
+  margin-top:40px;padding:30px;
+  text-align:center;background:var(--primary);
   color:white;
 }
 
-/* SIGN IN / SIGN UP MODAL */
+/* MODAL */
 .modal{
-  display:none;
-  position:fixed;
-  inset:0;
+  display:none;position:fixed;inset:0;
   background:rgba(0,0,0,0.5);
-  align-items:center;
-  justify-content:center;
+  align-items:center;justify-content:center;
 }
-
 .modal-content{
-  background:white;
-  padding:30px;
+  background:white;padding:30px;
   border-radius:var(--radius);
   width:320px;
 }
-
 .modal-content input{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
+  width:100%;padding:10px;margin:8px 0;
 }
-
-.modal-content button{
+.modal-content .submit-btn{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:10px;
   width:100%;
-  margin-top:10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.close-btn{
+  background:#ccc;margin-top:8px;
+  width:100%;padding:8px;border:none;
+  border-radius:8px;cursor:pointer;
+}
+.loading{
+  color:var(--muted);
+  font-style:italic;
 }
 </style>
 </head>
@@ -239,7 +179,7 @@ footer{
 <div class="results">
   <div class="card">
     <h3>Search Results</h3>
-    <div id="casesContainer"></div>
+    <div id="casesContainer" class="loading">Loading cases...</div>
   </div>
 </div>
 
@@ -253,28 +193,27 @@ footer{
   SealLaw © 2026 — AI Legal Assistance Platform
 </footer>
 
-<!-- MODAL -->
-<div id="authModal" class="modal">
+<!-- AUTH MODAL -->
+<div id="authModal" class="modal" onclick="outsideClick(event)">
   <div class="modal-content">
     <h3 id="modalTitle"></h3>
-    <input placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button class="small-btn">Submit</button>
-    <button onclick="closeModal()" style="background:#ccc;margin-top:5px;">Cancel</button>
+    <input id="authEmail" placeholder="Email">
+    <input id="authPassword" type="password" placeholder="Password">
+    <button class="submit-btn" onclick="submitAuth()">Submit</button>
+    <button class="close-btn" onclick="closeModal()">Cancel</button>
   </div>
 </div>
 
 <script>
 let casesData = [];
-let loaded = false;
 
 async function loadCases(){
   try{
-    const res = await fetch("cases.json");
+    const res = await fetch("./cases.json");
+    if(!res.ok) throw new Error();
     casesData = await res.json();
-    loaded = true;
     displayCases(casesData.slice(0,5));
-  }catch(e){
+  }catch{
     document.getElementById("casesContainer").innerHTML = "Failed to load cases.";
   }
 }
@@ -289,25 +228,19 @@ function displayCases(cases){
   }
 
   cases.forEach(c=>{
-    const text = `
+    container.innerHTML += `
       <div class="case">
         <h4>${c.title}</h4>
-        <div class="meta">${c.summary?.substring(0,250)}...</div>
-        <div class="meta"><strong>Law:</strong> ${(c.law||[]).join(", ")}</div>
-        <div class="meta"><strong>Helpline:</strong> ${c.helpline||"N/A"}</div>
+        <div class="meta">${(c.summary || "").substring(0,250)}...</div>
+        <div class="meta"><strong>Law:</strong> ${(c.law || []).join(", ")}</div>
+        <div class="meta"><strong>Helpline:</strong> ${c.helpline || "N/A"}</div>
         <button class="small-btn" onclick="window.open('${c.reference}','_blank')">View Full Case</button>
       </div>
     `;
-    container.innerHTML += text;
   });
 }
 
 function searchCases(){
-  if(!loaded){
-    alert("Cases are still loading...");
-    return;
-  }
-
   const query = document.getElementById("q").value.trim().toLowerCase();
   if(!query) return;
 
@@ -331,14 +264,25 @@ document.querySelectorAll(".chip").forEach(chip=>{
   });
 });
 
-/* SIGNIN / SIGNUP */
+/* AUTH MODAL */
 function openModal(type){
   document.getElementById("authModal").style.display="flex";
-  document.getElementById("modalTitle").innerText = type==="signin" ? "Sign In" : "Sign Up";
+  document.getElementById("modalTitle").innerText =
+    type==="signin" ? "Sign In" : "Sign Up";
 }
 
 function closeModal(){
   document.getElementById("authModal").style.display="none";
+}
+
+function outsideClick(e){
+  if(e.target.id === "authModal") closeModal();
+}
+
+function submitAuth(){
+  const email = document.getElementById("authEmail").value;
+  alert("Demo mode. Logged in as " + email);
+  closeModal();
 }
 
 loadCases();
