@@ -51,7 +51,22 @@ function showPreview(caseData,query,lag){
     <p><strong>Citation:</strong> ${caseData.reference}</p>
     <p>${caseData.summary}</p>
   `;
-
+if(caseData.advocates){
+  caseData.advocates.forEach(name=>{
+    const btn=document.createElement("button");
+    btn.textContent=name;
+    btn.onclick=()=>{
+      localStorage.setItem("selectedAdvocate",JSON.stringify({
+        name:name,
+        email:"contact@sealaw.in",
+        phone:"9885353758",
+        specialization:caseData.law.join(", ")
+      }));
+      location.href="advocate.html";
+    };
+    document.getElementById("casePreview").appendChild(btn);
+  });
+}
   document.getElementById("aiExplanation").innerHTML=`
     Based on your query "<b>${query}</b>", this case is relevant because it discusses ${caseData.law.join(", ")}.
   `;
