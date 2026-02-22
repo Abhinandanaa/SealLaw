@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SealLaw Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div>Admin Dashboard</div>
+</nav>
+
+<div style="padding:40px">
+  <h2>System Metrics</h2>
+  <div id="metrics"></div>
+</div>
+
+<script>
+const users=JSON.parse(localStorage.getItem("users")||"[]");
+document.getElementById("metrics").innerHTML=`
+Total Registered Users: ${users.length}
+`;
+</script>
+
+</body>
+</html>
