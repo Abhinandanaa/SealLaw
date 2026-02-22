@@ -1,1 +1,57 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SealLaw — Advocate Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo" onclick="location.href='index.html'">SealLaw</div>
+</nav>
+
+<div class="profile-container">
+
+  <div class="profile-card">
+    <h2 id="advName"></h2>
+    <p><strong>Email:</strong> <span id="advEmail"></span></p>
+    <p><strong>Phone:</strong> <span id="advPhone"></span></p>
+    <p><strong>Specialization:</strong> <span id="advSpecial"></span></p>
+  </div>
+
+  <div class="profile-cases">
+    <h3>Related Cases</h3>
+    <div id="mappedCases"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  const advocate = JSON.parse(localStorage.getItem("selectedAdvocate"));
+
+  if(advocate){
+    document.getElementById("advName").textContent = advocate.name;
+    document.getElementById("advEmail").textContent = advocate.email;
+    document.getElementById("advPhone").textContent = advocate.phone;
+    document.getElementById("advSpecial").textContent = advocate.specialization;
+
+    const cases = JSON.parse(localStorage.getItem("sealaw_results")) || [];
+    const mapped = cases.filter(c => c.advocates && c.advocates.includes(advocate.name));
+
+    const container = document.getElementById("mappedCases");
+
+    mapped.forEach(c=>{
+      const div=document.createElement("div");
+      div.innerHTML=`<h4>${c.title}</h4><p>${c.summary.substring(0,120)}...</p>`;
+      container.appendChild(div);
+    });
+
+  } else {
+    document.body.innerHTML="<h2 style='padding:40px'>No Advocate Selected</h2>";
+  }
+</script>
+
+</body>
+</html>
