@@ -1,74 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SealLaw — Legal Literacy Platform</title>
-<link rel="stylesheet" href="style.css">
+  <title>SealLaw — Legal Literacy Platform</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="navbar">
-  <h2 onclick="location.reload()">SealLaw</h2>
-  <div class="nav-buttons">
-    <button onclick="openModal('signin')">Sign In</button>
-    <button onclick="openModal('signup')">Sign Up</button>
+<nav class="navbar">
+  <div class="logo">SealLaw</div>
+  <div class="nav-actions">
+    <button onclick="openLogin()">Login</button>
+    <button onclick="openRegister()">Register</button>
+    <button onclick="goAdmin()">Admin</button>
   </div>
+</nav>
+
+<section class="hero">
+  <h1>Legal Literacy Made Accessible</h1>
+  <p>Connecting citizens with verified public judgments and advocates.</p>
+</section>
+
+<div class="search-section">
+  <input id="searchInput" placeholder="Search legal issue...">
+  <button onclick="performSearch()">Search</button>
 </div>
 
-<div class="container">
-
-<div class="hero">
-  <h1>SealLaw</h1>
-  <p>Building legal literacy and bridging the gap between citizens and advocates through verified public judgments.</p>
+<div class="recommendations">
+  <span onclick="quickSearch('privacy')">Privacy</span>
+  <span onclick="quickSearch('defamation')">Defamation</span>
+  <span onclick="quickSearch('medical negligence')">Medical Negligence</span>
+  <span onclick="quickSearch('cheque bounce')">Cheque Bounce</span>
 </div>
 
-<div class="search-box">
-  <input id="q" placeholder="Search legal issue...">
-  <button onclick="searchCases()">Search</button>
-</div>
-
-<div class="chips">
-  <span class="chip" onclick="quickSearch('privacy')">Privacy</span>
-  <span class="chip" onclick="quickSearch('defamation')">Defamation</span>
-  <span class="chip" onclick="quickSearch('medical negligence')">Medical Negligence</span>
-  <span class="chip" onclick="quickSearch('cheque bounce')">Cheque Bounce</span>
-</div>
-
-<div class="filter-bar">
-  <select id="yearFilter">
-    <option value="">All Years</option>
-    <option value="2015">2015</option>
-    <option value="2016">2016</option>
-  </select>
-
-  <select id="courtFilter">
-    <option value="">All Courts</option>
-    <option value="Supreme Court">Supreme Court</option>
-    <option value="High Court">High Court</option>
-  </select>
-</div>
-
-<div class="card">
-  <h3>Search Results</h3>
-  <div id="resultsContainer"></div>
-  <div id="pagination" class="pagination"></div>
-</div>
-
-<div class="disclaimer">
-  SealLaw provides educational legal information based on publicly available judgments.
-</div>
-
-</div>
-
-<div class="modal" id="authModal">
-  <div class="modal-content">
-    <h3 id="modalTitle"></h3>
-    <input id="authEmail" placeholder="Email">
-    <input id="authPassword" type="password" placeholder="Password">
-    <button onclick="submitAuth()">Submit</button>
-    <button onclick="closeModal()">Cancel</button>
-  </div>
-</div>
+<div id="searchLogs" class="logs"></div>
 
 <script src="script.js"></script>
+<script src="auth.js"></script>
 </body>
 </html>
