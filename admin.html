@@ -14,8 +14,15 @@
   <h2>System Metrics</h2>
   <div id="metrics"></div>
 </div>
+<h2>Admin Dashboard</h2>
+<div id="metrics"></div>
 
+<script src="data.js"></script>
 <script>
+document.getElementById("metrics").innerHTML=`
+Total Cases: ${cases.length}
+`;
+</script>
 const users=JSON.parse(localStorage.getItem("users")||"[]");
 document.getElementById("metrics").innerHTML=`
 Total Registered Users: ${users.length}
