@@ -1,215 +1,87 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SealLaw — Results</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --primary:#3D5628;
-  --bg:#D9E7C7;
-  --card:#EEF5E6;
-  --text:#1E2A16;
-  --muted:#5E6F57;
-  --border:#C7D8B6;
-  --radius:20px;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 40px;
-  background:var(--primary);
-  color:white;
-}
-.navbar h2{
-  margin:0;
-  font-family:Playfair Display, serif;
-  cursor:pointer;
-}
-.app{
-  max-width:1200px;
-  margin:auto;
-  padding:50px 20px;
-}
-h1{
-  font-family:Playfair Display, serif;
-  margin-bottom:10px;
-}
-.muted{
-  color:var(--muted);
-  margin-bottom:40px;
-}
-.results{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:30px;
-}
-.card{
-  background:var(--card);
-  padding:25px;
-  border-radius:var(--radius);
-  box-shadow:0 8px 25px rgba(0,0,0,0.06);
-}
-.case{
-  padding:14px 0;
-  border-bottom:1px solid var(--border);
-}
-.case:last-child{
-  border-bottom:none;
-}
-.case h4{
-  margin:0;
-}
-.meta{
-  font-size:14px;
-  color:var(--muted);
-  margin-top:6px;
-}
-.small-btn{
-  background:var(--primary);
-  color:white;
-  border:none;
-  padding:6px 12px;
-  border-radius:999px;
-  cursor:pointer;
-  font-size:12px;
-  margin-top:8px;
-}
-.tag{
-  display:inline-block;
-  background:var(--primary);
-  color:white;
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:12px;
-  margin-top:6px;
-}
-.back-btn{
-  margin-top:40px;
-  display:inline-block;
-  padding:10px 20px;
-  background:var(--primary);
-  color:white;
-  border-radius:999px;
-  text-decoration:none;
-}
-@media(max-width:900px){
-  .results{
-    grid-template-columns:1fr;
-  }
-}
-</style>
+<title>SealLaw Results</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="navbar">
-  <h2 onclick="location.href='index.html'">SealLaw</h2>
-</div>
+<nav class="navbar">
+  <div class="logo" onclick="location.href='index.html'">SealLaw</div>
+</nav>
 
-<div class="app">
+<div class="results-container">
 
-  <h1 id="queryTitle">Search Results</h1>
-  <p class="muted" id="queryDesc"></p>
-
-  <div class="results">
-
-    <!-- LEFT -->
-    <div class="card">
-      <h3>Applicable Law Sections</h3>
-      <div id="lawSections"></div>
-
-      <h3 style="margin-top:30px;">Related Cases</h3>
-      <div id="casesContainer"></div>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="card">
-      <h3>Liability Notes</h3>
-      <div id="liabilityContainer"></div>
-    </div>
-
-  </div>
-
-  <a href="index.html" class="back-btn">← Back to Home</a>
+<h2>Search Results</h2>
+<div id="filters"></div>
+<div id="results"></div>
+<div id="pagination"></div>
+<div id="logs"></div>
 
 </div>
 
+<script src="data.js"></script>
 <script>
 
-const params = new URLSearchParams(window.location.search);
-const query = (params.get("q") || "").toLowerCase();
+const query = localStorage.getItem("sealaw_query") || "";
+const startTime = performance.now();
 
-document.getElementById("queryTitle").innerText =
-  query ? "Results for: " + query : "Legal Results";
+function tokenize(q){
+  return q.toLowerCase().split(/\s+/).filter(x=>x.length>2);
+}
 
-fetch("cases.json")
-  .then(res => res.json())
-  .then(data => {
-
-    const filtered = data.filter(c =>
-      c.title.toLowerCase().includes(query) ||
-      c.summary.toLowerCase().includes(query) ||
-      c.law.join(" ").toLowerCase().includes(query)
-    );
-
-    if(filtered.length === 0){
-      document.getElementById("queryDesc").innerText =
-        "No matching cases found. Try broader keywords.";
-      return;
-    }
-
-    document.getElementById("queryDesc").innerText =
-      "Showing top relevant Supreme Court cases.";
-
-    // LAW SECTION EXTRACTION
-    const lawSet = new Set();
-    filtered.forEach(c => c.law.forEach(l => lawSet.add(l)));
-
-    const lawDiv = document.getElementById("lawSections");
-    [...lawSet].slice(0,6).forEach(law => {
-      const el = document.createElement("div");
-      el.innerHTML = `<div class="tag">${law}</div>`;
-      lawDiv.appendChild(el);
-    });
-
-    // CASES DISPLAY
-    const caseDiv = document.getElementById("casesContainer");
-    filtered.slice(0,6).forEach(c => {
-      const el = document.createElement("div");
-      el.className = "case";
-      el.innerHTML = `
-        <h4>${c.title}</h4>
-        <div class="meta">${c.summary.substring(0,300)}...</div>
-        <button class="small-btn" onclick="window.open('${c.reference}','_blank')">
-          View Full Judgment
-        </button>
-      `;
-      caseDiv.appendChild(el);
-    });
-
-    // LIABILITY NOTES
-    const liabilityDiv = document.getElementById("liabilityContainer");
-    filtered[0].liability_notes.forEach(note => {
-      const el = document.createElement("div");
-      el.className = "meta";
-      el.innerHTML = "• " + note;
-      liabilityDiv.appendChild(el);
-    });
-
+function scoreCase(c, tokens){
+  let score=0;
+  tokens.forEach(t=>{
+    if(c.title.toLowerCase().includes(t)) score+=5;
+    if(c.law.join(" ").toLowerCase().includes(t)) score+=3;
+    if(c.summary.toLowerCase().includes(t)) score+=1;
   });
+  return score;
+}
 
+function search(){
+  const tokens = tokenize(query);
+  const scored = cases.map(c=>({
+    case:c,
+    score:scoreCase(c,tokens)
+  })).filter(x=>x.score>0)
+    .sort((a,b)=>b.score-a.score);
+
+  render(scored);
+  renderLogs(tokens, scored);
+}
+
+function render(results){
+  const container=document.getElementById("results");
+  container.innerHTML="";
+  results.slice(0,5).forEach(r=>{
+    const c=r.case;
+    container.innerHTML+=`
+      <div class="card">
+        <h3>${c.title}</h3>
+        <p>${c.summary.substring(0,150)}...</p>
+        <button onclick="preview('${c.id}')">View</button>
+      </div>`;
+  });
+}
+
+function preview(id){
+  const c=cases.find(x=>x.id==id);
+  alert(c.title + "\n\n" + c.summary);
+}
+
+function renderLogs(tokens, results){
+  const end=performance.now();
+  document.getElementById("logs").innerHTML=`
+  <h3>Search Engine Logs</h3>
+  Tokens: ${tokens.join(", ")}<br>
+  Matches: ${results.length}<br>
+  Query Time: ${(end-startTime).toFixed(2)} ms
+  `;
+}
+
+search();
 </script>
 
 </body>
