@@ -1,49 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>SealLaw — Legal Literacy Platform</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Case Repository - Find Similar Cases</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>⚖️ Legal Case Repository</h1>
+            <p class="tagline">Find similar cases and connect with advocates</p>
+        </header>
 
-<nav class="navbar">
-  <div class="logo">SealLaw</div>
-  <div class="nav-links">
-    <button onclick="openAuth('login')">Sign In</button>
-    <button onclick="openAuth('signup')">Create Account</button>
-  </div>
-</nav>
+        <main>
+            <section class="intro-card">
+                <h2>Describe Your Legal Problem</h2>
+                <p>Enter details about your legal issue. We'll find similar cases and recommend advocates who have handled such matters.</p>
+            </section>
 
-<section class="hero">
-  <h1>Legal Literacy Made Accessible</h1>
-  <p>SealLaw bridges citizens and advocates using structured public court judgments.</p>
-  
-  <div class="search-box">
-    <input id="searchInput" placeholder="Search legal issue (e.g. cheque bounce, privacy, negligence)">
-    <button onclick="startSearch()">Search</button>
-  </div>
+            <section class="form-card">
+                <form id="problemForm">
+                    <div class="form-group">
+                        <label for="problemTitle">Problem Title *</label>
+                        <input type="text" id="problemTitle" placeholder="e.g., Workplace harassment at company" required>
+                    </div>
 
-  <div class="chips">
-    <button onclick="quickSearch('privacy')">Privacy</button>
-    <button onclick="quickSearch('cheque')">Cheque Bounce</button>
-    <button onclick="quickSearch('negligence')">Medical Negligence</button>
-    <button onclick="quickSearch('constitution')">Constitution</button>
-  </div>
-</section>
+                    <div class="form-group">
+                        <label for="problemCategory">Category *</label>
+                        <select id="problemCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="criminal">Criminal Law</option>
+                            <option value="civil">Civil Law</option>
+                            <option value="consumer">Consumer Disputes</option>
+                            <option value="property">Property/Real Estate</option>
+                            <option value="family">Family Law</option>
+                            <option value="labor">Labor/Employment</option>
+                            <option value="cyber">Cyber/IT Law</option>
+                            <option value="medical">Medical Negligence</option>
+                            <option value="women">Women Protection</option>
+                            <option value="environmental">Environmental Law</option>
+                            <option value="tax">Taxation</option>
+                            <option value="constitutional">Constitutional Rights</option>
+                        </select>
+                    </div>
 
-<section class="why">
-  <h2>What SealLaw Does</h2>
-  <ul>
-    <li>Indexes 100+ verified Supreme Court judgments</li>
-    <li>Maps cases to relevant legal provisions</li>
-    <li>Connects users with advocates</li>
-    <li>Provides structured legal explanation</li>
-  </ul>
-</section>
+                    <div class="form-group">
+                        <label for="problemDescription">Detailed Description *</label>
+                        <textarea id="problemDescription" rows="6" placeholder="Describe your situation in detail. Include relevant facts, dates, parties involved, and what outcome you seek..." required></textarea>
+                    </div>
 
-<script src="data.js"></script>
-<script src="auth.js"></script>
-<script src="script.js"></script>
+                    <div class="form-group">
+                        <label for="problemLocation">State/Location</label>
+                        <select id="problemLocation">
+                            <option value="">Select State (Optional)</option>
+                            <option value="all">All India</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="karnataka">Karnataka</option>
+                            <option value="tamil-nadu">Tamil Nadu</option>
+                            <option value="uttar-pradesh">Uttar Pradesh</option>
+                            <option value="west-bengal">West Bengal</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="punjab">Punjab</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="telangana">Telangana</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
+                    <button type="submit" class="btn-primary">🔍 Find Similar Cases</button>
+                </form>
+            </section>
+
+            <section class="stats-card">
+                <div class="stat">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Cases in Database</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Advocates</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Legal Categories</span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>🔒 <strong>Privacy First:</strong> All case data is encrypted and identities are anonymized</p>
+            <p>For emergencies, call <strong>100</strong> (Police) or <strong>181</strong> (Women Helpline)</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
