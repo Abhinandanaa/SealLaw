@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Adv. Priya Sharma",
+        "specialty": ["cyber", "constitutional"],
+        "experience": "15 years",
+        "location": "Delhi",
+        "phone": "+91-98765XXXXX",
+        "email": "priya.sharma@law.in",
+        "cases_handled": 250,
+        "rating": 4.8,
+        "bio": "Specializing in cyber law and constitutional rights with extensive experience in IT Act cases."
+    },
+    {
+        "id": 2,
+        "name": "Adv. Rajesh Kumar",
+        "specialty": ["criminal", "civil"],
+        "experience": "20 years",
+        "location": "Maharashtra",
+        "phone": "+91-87654XXXXX",
+        "email": "rajesh.kumar@law.in",
+        "cases_handled": 400,
+        "rating": 4.9,
+        "bio": "Senior advocate with expertise in criminal defense and high-profile civil litigation."
+    },
+    {
+        "id": 3,
+        "name": "Adv. Ananya Reddy",
+        "specialty": ["family", "women"],
+        "experience": "12 years",
+        "location": "Karnataka",
+        "phone": "+91-76543XXXXX",
+        "email": "ananya.reddy@law.in",
+        "cases_handled": 180,
+        "rating": 4.7,
+        "bio": "Dedicated to women's rights, family law, and domestic violence cases."
+    },
+    {
+        "id": 4,
+        "name": "Adv. Vikram Singh",
+        "specialty": ["property", "civil"],
+        "experience": "18 years",
+        "location": "Uttar Pradesh",
+        "phone": "+91-65432XXXXX",
+        "email": "vikram.singh@law.in",
+        "cases_handled": 320,
+        "rating": 4.6,
+        "bio": "Expert in property disputes, real estate litigation, and land acquisition cases."
+    },
+    {
+        "id": 5,
+        "name": "Adv. Meera Patel",
+        "specialty": ["consumer", "civil"],
+        "experience": "10 years",
+        "location": "Gujarat",
+        "phone": "+91-54321XXXXX",
+        "email": "meera.patel@law.in",
+        "cases_handled": 150,
+        "rating": 4.8,
+        "bio": "Consumer rights advocate with focus on product liability and service disputes."
+    },
+    {
+        "id": 6,
+        "name": "Adv. Suresh Menon",
+        "specialty": ["labor", "civil"],
+        "experience": "22 years",
+        "location": "Tamil Nadu",
+        "phone": "+91-98761XXXXX",
+        "email": "suresh.menon@law.in",
+        "cases_handled": 450,
+        "rating": 4.9,
+        "bio": "Labor law expert representing both employees and employers in workplace disputes."
+    },
+    {
+        "id": 7,
+        "name": "Adv. Kavitha Nair",
+        "specialty": ["medical", "consumer"],
+        "experience": "14 years",
+        "location": "Kerala",
+        "phone": "+91-87650XXXXX",
+        "email": "kavitha.nair@law.in",
+        "cases_handled": 200,
+        "rating": 4.7,
+        "bio": "Specializing in medical negligence and healthcare consumer disputes."
+    },
+    {
+        "id": 8,
+        "name": "Adv. Amit Verma",
+        "specialty": ["tax", "civil"],
+        "experience": "16 years",
+        "location": "Delhi",
+        "phone": "+91-76549XXXXX",
+        "email": "amit.verma@law.in",
+        "cases_handled": 280,
+        "rating": 4.8,
+        "bio": "Taxation specialist with expertise in GST, income tax, and corporate law."
+    },
+    {
+        "id": 9,
+        "name": "Adv. Deepa Joshi",
+        "specialty": ["environmental", "constitutional"],
+        "experience": "11 years",
+        "location": "West Bengal",
+        "phone": "+91-65438XXXXX",
+        "email": "deepa.joshi@law.in",
+        "cases_handled": 120,
+        "rating": 4.6,
+        "bio": "Environmental law expert focusing on pollution, NGT cases, and green justice."
+    },
+    {
+        "id": 10,
+        "name": "Adv. Arun Khanna",
+        "specialty": ["criminal", "constitutional"],
+        "experience": "25 years",
+        "location": "Delhi",
+        "phone": "+91-98760XXXXX",
+        "email": "arun.khanna@law.in",
+        "cases_handled": 500,
+        "rating": 4.9,
+        "bio": "Senior counsel with Supreme Court practice in constitutional and criminal matters."
+    }
+]
