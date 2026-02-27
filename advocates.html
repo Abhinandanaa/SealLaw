@@ -1,57 +1,45 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SealLaw — Advocate Profile</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Advocates - Legal Case Repository</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <h1>👨‍⚖️ Our Advocate Network</h1>
+            <p class="tagline">Experienced lawyers across India specializing in various legal domains</p>
+        </header>
 
-<nav class="navbar">
-  <div class="logo" onclick="location.href='index.html'">SealLaw</div>
-</nav>
+        <main>
+            <section class="filter-section">
+                <input type="text" id="advocateSearch" placeholder="Search advocates by name or specialty..." class="search-input">
+                <select id="specialtyFilter">
+                    <option value="">All Specialties</option>
+                    <option value="criminal">Criminal Law</option>
+                    <option value="civil">Civil Law</option>
+                    <option value="consumer">Consumer Disputes</option>
+                    <option value="property">Property Law</option>
+                    <option value="family">Family Law</option>
+                    <option value="cyber">Cyber Law</option>
+                    <option value="constitutional">Constitutional Law</option>
+                </select>
+            </section>
 
-<div class="profile-container">
+            <div id="advocatesGrid" class="advocates-full-grid"></div>
+        </main>
 
-  <div class="profile-card">
-    <h2 id="advName"></h2>
-    <p><strong>Email:</strong> <span id="advEmail"></span></p>
-    <p><strong>Phone:</strong> <span id="advPhone"></span></p>
-    <p><strong>Specialization:</strong> <span id="advSpecial"></span></p>
-  </div>
+        <footer>
+            <p>🔒 <strong>Privacy First:</strong> All case data is encrypted and identities are anonymized</p>
+        </footer>
+    </div>
 
-  <div class="profile-cases">
-    <h3>Related Cases</h3>
-    <div id="mappedCases"></div>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
-<script>
-  const advocate = JSON.parse(localStorage.getItem("selectedAdvocate"));
-
-  if(advocate){
-    document.getElementById("advName").textContent = advocate.name;
-    document.getElementById("advEmail").textContent = advocate.email;
-    document.getElementById("advPhone").textContent = advocate.phone;
-    document.getElementById("advSpecial").textContent = advocate.specialization;
-
-    const cases = JSON.parse(localStorage.getItem("sealaw_results")) || [];
-    const mapped = cases.filter(c => c.advocates && c.advocates.includes(advocate.name));
-
-    const container = document.getElementById("mappedCases");
-
-    mapped.forEach(c=>{
-      const div=document.createElement("div");
-      div.innerHTML=`<h4>${c.title}</h4><p>${c.summary.substring(0,120)}...</p>`;
-      container.appendChild(div);
-    });
-
-  } else {
-    document.body.innerHTML="<h2 style='padding:40px'>No Advocate Selected</h2>";
-  }
-</script>
-
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadAllAdvocates);
+    </script>
 </body>
 </html>
