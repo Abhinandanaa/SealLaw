@@ -1,72 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results - Legal Case Repository</title>
-    <link rel="stylesheet" href="style.css">
+<title>SealLaw Results</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="index.html" class="back-link">← Back to Home</a>
-            <h1>⚖️ Search Results</h1>
-        </header>
 
-        <main>
-            <!-- User's Problem Summary -->
-            <section class="problem-summary">
-                <h2>Your Problem</h2>
-                <div id="userProblem" class="summary-box"></div>
-            </section>
+<nav class="navbar">
+  <div class="logo" onclick="location.href='index.html'">SealLaw</div>
+</nav>
 
-            <!-- Matching Cases -->
-            <section class="results-section">
-                <h2>📋 Similar Cases Found</h2>
-                <p class="results-count">Found <span id="caseCount">0</span> relevant cases</p>
-                <div id="casesList" class="cases-grid"></div>
-            </section>
+<div class="results-container">
 
-            <!-- Recommended Advocates -->
-            <section class="results-section">
-                <h2>👨‍⚖️ Recommended Advocates</h2>
-                <p class="results-count">Based on case category and complexity</p>
-                <div id="advocatesList" class="advocates-grid"></div>
-            </section>
+<h2>Search Results</h2>
+<div id="filters"></div>
+<div id="results"></div>
+<div id="pagination"></div>
+<div id="logs"></div>
 
-            <!-- Helpline Section -->
-            <section class="helpline-section">
-                <h2>🆘 Need Immediate Help?</h2>
-                <div class="helpline-grid">
-                    <div class="helpline-card">
-                        <h3>Women Helpline</h3>
-                        <p>📞 181</p>
-                    </div>
-                    <div class="helpline-card">
-                        <h3>Police Emergency</h3>
-                        <p>📞 100</p>
-                    </div>
-                    <div class="helpline-card">
-                        <h3>Cyber Crime</h3>
-                        <p>📞 1930</p>
-                    </div>
-                    <div class="helpline-card">
-                        <h3>Legal Aid</h3>
-                        <p>📞 15100</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+</div>
 
-        <footer>
-            <p>🔒 <strong>Privacy First:</strong> All case data is encrypted and identities are anonymized</p>
-        </footer>
-    </div>
+<script src="data.js"></script>
+<script>
 
-    <script src="script.js"></script>
-    <script>
-        // Load results on page load
-        document.addEventListener('DOMContentLoaded', loadResults);
-    </script>
+const query = localStorage.getItem("sealaw_query") || "";
+const startTime = performance.now();
+
+function tokenize(q){
+  return q.toLowerCase().split(/\s+/).filter(x=>x.length>2);
+}
+
+function scoreCase(c, tokens){
+  let score=0;
+  tokens.forEach(t=>{
+    if(c.title.toLowerCase().includes(t)) score+=5;
+    if(c.law.join(" ").toLowerCase().includes(t)) score+=3;
+    if(c.summary.toLowerCase().includes(t)) score+=1;
+  });
+  return score;
+}
+
+function search(){
+  const tokens = tokenize(query);
+  const scored = cases.map(c=>({
+    case:c,
+    score:scoreCase(c,tokens)
+  })).filter(x=>x.score>0)
+    .sort((a,b)=>b.score-a.score);
+
+  render(scored);
+  renderLogs(tokens, scored);
+}
+
+function render(results){
+  const container=document.getElementById("results");
+  container.innerHTML="";
+  results.slice(0,5).forEach(r=>{
+    const c=r.case;
+    container.innerHTML+=`
+      <div class="card">
+        <h3>${c.title}</h3>
+        <p>${c.summary.substring(0,150)}...</p>
+        <button onclick="preview('${c.id}')">View</button>
+      </div>`;
+  });
+}
+
+function preview(id){
+  const c=cases.find(x=>x.id==id);
+  alert(c.title + "\n\n" + c.summary);
+}
+
+function renderLogs(tokens, results){
+  const end=performance.now();
+  document.getElementById("logs").innerHTML=`
+  <h3>Search Engine Logs</h3>
+  Tokens: ${tokens.join(", ")}<br>
+  Matches: ${results.length}<br>
+  Query Time: ${(end-startTime).toFixed(2)} ms
+  `;
+}
+
+search();
+</script>
+
 </body>
 </html>
